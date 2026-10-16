@@ -35,9 +35,9 @@ a{color:inherit}
 header{position:fixed;top:0;left:0;right:0;z-index:40;color:#000;background:rgba(255,255,255,.88);backdrop-filter:blur(10px)}
 .nav{display:flex;justify-content:space-between;align-items:center;height:68px}
 .brand{font-family:var(--H);text-transform:uppercase;font-size:15px;text-decoration:none;letter-spacing:-.01em}
-.brand span{display:inline-block;animation:glow 7s calc(.6s + var(--k) * 70ms) infinite both}
+.brand span,.ft-brand span{display:inline-block;animation:glow 7s calc(.6s + var(--k) * 70ms) infinite both}
 @keyframes glow{0%{color:#000}3%{color:var(--blue)}45%{color:var(--blue)}52%{color:#000}100%{color:#000}}
-@media (prefers-reduced-motion:reduce){.brand span{animation:none}}
+@media (prefers-reduced-motion:reduce){.brand span,.ft-brand span{animation:none}}
 .links{display:flex;gap:30px;list-style:none}
 .links a{text-decoration:none;font-weight:600;text-transform:uppercase;font-size:13px}
 .burger{display:none;background:none;border:0;color:#000;font:600 14px var(--B);text-transform:uppercase}
@@ -67,7 +67,9 @@ header{position:fixed;top:0;left:0;right:0;z-index:40;color:#000;background:rgba
 .journey li:after{content:"";position:absolute;left:58px;right:6px;top:12px;height:1px;background:currentColor;transform-origin:left;transform:scaleX(0);transition:transform .7s cubic-bezier(.16,1,.3,1)}
 .journey li:last-child:after{display:none}
 .journey li.on{color:#000}.journey li.on:after{transform:scaleX(1)}
-.journey li.on:last-child small{background:var(--blue);border-color:var(--blue)}
+.journey li.cur small{background:var(--blue);border-color:var(--blue);color:#000}
+.journey ol.rot li{color:#B9B9C2}.journey ol.rot li.cur{color:#000}
+.journey ol.rot li:after{background:#C9C9D1}
 .hero-meta{display:flex;justify-content:space-between;align-items:end;margin-top:34px;gap:30px}
 .hero-meta p{max-width:420px;font-size:16px}
 .cta{display:inline-flex;align-items:center;gap:10px;background:var(--blue);color:#000;text-decoration:none;font-family:var(--H);text-transform:uppercase;font-size:13px;padding:14px 22px;border-radius:999px;transition:transform .25s}
@@ -191,7 +193,8 @@ form .picked.on{display:inline-flex}form .picked button{border:0;background:none
 /* contact */
 .contact{background:var(--blue);color:#000;padding:110px 0 100px}
 .contact h2{font-size:clamp(28px,3vw,44px);color:#000}
-.contact-grid{display:grid;grid-template-columns:1fr;gap:80px;margin-top:36px}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;margin-top:36px;align-items:center}
+.ct-photo{margin:0;border-radius:10px;overflow:hidden;aspect-ratio:4/3;max-height:420px}.ct-photo img{width:100%;height:100%;object-fit:cover}
 .contact .ch{margin-bottom:26px}
 .dm{display:inline-flex;align-items:center;gap:12px;background:#000;color:#fff;text-decoration:none;font-family:var(--H);text-transform:uppercase;font-size:13px;padding:16px 24px;border-radius:999px;margin-bottom:34px;transition:transform .25s}
 .contact .ch a[href^="mailto"]{text-transform:none}
@@ -256,7 +259,7 @@ form .cta{border:0;cursor:pointer;justify-self:start;background:#000;color:#fff}
 .hp{display:none}
 footer{background:#fff;color:#000;padding:80px 0 26px;font-size:14px}
 footer a{text-decoration:none}
-.ft-top{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;padding-bottom:60px}
+.ft-top{display:grid;grid-template-columns:1fr auto;gap:40px;padding-bottom:60px}
 .ft-brand{font-family:var(--H);text-transform:uppercase;font-size:clamp(30px,3.6vw,54px);line-height:.92;letter-spacing:-.02em}
 .ft-col .lbl{opacity:.55;margin-bottom:14px}
 .ft-col ul{list-style:none;display:grid;gap:8px;font-weight:600}
@@ -356,7 +359,7 @@ footer a{text-decoration:none}
   .about .big{font-size:14px}
   .about .cta,.ab .cta{font-size:11.5px;padding:13px 18px;white-space:normal;text-align:left}
   .more{display:inline-block;margin:18px 0 0}
-  .contact-grid{gap:34px}
+  .contact-grid{gap:34px}.ct-photo{display:none}
   .dm{width:100%;justify-content:center;margin-bottom:26px}.ctas{margin-bottom:26px}
   .ft-top .ft-col:last-child{grid-column:1/-1}.ft-dm{margin:14px 0 0}
   .cookie{padding:12px 14px;font-size:12px;gap:10px;border-radius:12px}
@@ -492,6 +495,7 @@ footer a{text-decoration:none}
         <a class="dm dm-main" href="#book-form" data-open-form>Book now <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
         <div class="alt-ways"><p class="q">Prefer to message directly?</p><div class="alt-links"><a href="mailto:piamiriam@gmail.com" aria-label="Email piamiriam@gmail.com" title="piamiriam@gmail.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.6"/><path d="M3.5 6.5 12 13l8.5-6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener" aria-label="Message me on Instagram" title="Instagram"><svg class="igi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a></div></div>
       </div>
+      <figure class="ct-photo"><img src="/foto7.jpg" alt="" loading="lazy"></figure>
       <div id="book" hidden data-email="piamiriam@gmail.com" data-subject="Booking:" data-msg="Hi Pia, I’d like to book: {service}. My preferred dates are: "></div>
     </div>
   </div></section>
@@ -510,6 +514,10 @@ footer a{text-decoration:none}
 <footer><div class="wrap">
   <div class="ft-top">
     <a class="ft-brand" href="/">Colours by<br>Pia Miriam</a>
+    <script>(() => { const b = document.querySelector('.ft-brand'); let k = 0; b.setAttribute('aria-label', b.textContent);
+      [...b.childNodes].forEach(n => { if (n.nodeType !== 3) return; const f = document.createDocumentFragment();
+        [...n.textContent].forEach(c => { const s = document.createElement('span'); s.setAttribute('aria-hidden', 'true'); s.style.setProperty('--k', k++); s.textContent = c === ' ' ? '\u00a0' : c; f.appendChild(s); });
+        n.replaceWith(f); }); })();</script>
     <div class="ft-col"><div class="lbl">Menu</div><ul>
       <li><a href="/#services">Services</a></li><li><a href="/#gallery">Work</a></li>
       <li><a href="/about">About</a></li><li><a href="/#contact">Contact</a></li></ul></div>
@@ -542,6 +550,14 @@ gsap.from('.fade', {opacity: 0, y: 20, duration: .9, ease: 'power3.out', delay: 
 const steps = [...document.querySelectorAll('#journey li')];
 document.getElementById('journey').style.setProperty('--n', steps.length);
 steps.forEach((li, k) => reduce ? li.classList.add('on') : setTimeout(() => li.classList.add('on'), 1100 + k * 550));
+// then the blue pill travels from city to city (same rhythm as on mobile)
+if (steps.length > 1) {
+  let cur = steps.length - 1; steps[cur].classList.add('cur');
+  if (!reduce) setTimeout(() => {
+    document.getElementById('journey').classList.add('rot');
+    setInterval(() => { steps[cur].classList.remove('cur'); cur = (cur + 1) % steps.length; steps[cur].classList.add('cur'); }, 1600);
+  }, 1100 + steps.length * 550 + 1200);
+}
 // CITIES (mobile): appear one after another
 if (!reduce) gsap.from('.hero-m .cities span', {opacity: 0, y: 10, duration: .7, ease: 'power3.out', stagger: .14, delay: .5});
 // QUOTE: words light up as you read
