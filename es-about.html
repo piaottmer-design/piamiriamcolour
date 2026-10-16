@@ -44,11 +44,11 @@ header{position:fixed;top:0;left:0;right:0;z-index:40;color:#000;background:rgba
 
 /* hero */
 .hero{background:#fff}
-.hero-d{padding:190px 0 110px}
-.hero-d h1{font-size:clamp(44px,7.2vw,112px);line-height:.88}
-.hero-m{display:none;padding:120px 0 60px}
+.hero-d{padding:190px 0 70px}
+.hero-d h1{font-size:clamp(52px,9vw,140px);line-height:.88}
+.hero-m{display:none;padding:120px 0 40px}
 .hero-m .lbl{color:var(--grey);margin-bottom:18px}
-.hero-m .hname{font-size:clamp(36px,10.5vw,50px);line-height:.9}
+.hero-m .hname{font-size:clamp(40px,11.8vw,58px);line-height:.9}
 .hero-m .hero-in{width:100%}
 .hero-text{font-size:15.5px;line-height:1.55;margin-top:22px}
 .cities{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0;margin:24px 0 28px;font-family:var(--H);text-transform:uppercase;font-size:11px;letter-spacing:.02em}
@@ -95,10 +95,11 @@ header{position:fixed;top:0;left:0;right:0;z-index:40;color:#000;background:rgba
 
 /* about text */
 .about{padding:110px 0;background:#fff}
+.hero-m + .about{padding-top:20px}
 .about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;align-items:center}
 .portrait-wrap{margin:0}.got{font-family:var(--H);text-transform:uppercase;font-size:clamp(18px,1.6vw,24px);margin-top:16px;letter-spacing:-.01em}
 .about .portrait{border-radius:6px;overflow:hidden;aspect-ratio:4/5}
-.about .portrait img{width:100%;height:115%;object-fit:cover;object-position:50% 40%}
+.about .portrait img{width:100%;height:115%;object-fit:cover;object-position:50% 72%}
 .about h2{font-size:clamp(28px,3vw,44px);margin-bottom:20px}
 .about .big{font-family:var(--H);text-transform:uppercase;font-size:clamp(15px,1.3vw,18px);line-height:1.2;margin-bottom:18px}
 .about p{margin-bottom:16px;max-width:600px}
@@ -194,7 +195,45 @@ form .picked.on{display:inline-flex}form .picked button{border:0;background:none
 .contact .ch{margin-bottom:26px}
 .dm{display:inline-flex;align-items:center;gap:12px;background:#000;color:#fff;text-decoration:none;font-family:var(--H);text-transform:uppercase;font-size:13px;padding:16px 24px;border-radius:999px;margin-bottom:34px;transition:transform .25s}
 .contact .ch a[href^="mailto"]{text-transform:none}
-.dm:hover{transform:translateY(-2px)}.dm svg{width:20px;height:20px}.dm svg path{stroke:#fff}
+.dm:hover{transform:translateY(-2px)}
+.sheet{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s}
+.sheet.open{opacity:1;pointer-events:auto}
+.sheet-in{position:relative;background:#fff;border-radius:22px;padding:30px 30px 22px;max-width:540px;width:100%;max-height:calc(100vh - 32px);overflow:auto;transform:translateY(14px);transition:transform .3s}
+.sheet.open .sheet-in{transform:none}
+.sheet .x{position:absolute;top:18px;right:20px;background:none;border:0;font-size:12px;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;color:#000;z-index:2}
+.prog{margin:0 70px 22px 0}.prog .lbl{display:block;color:var(--grey);margin-bottom:10px}.prog .lbl b{color:#000}
+.prog i{display:block;height:3px;background:var(--line);border-radius:3px;overflow:hidden}.prog .bar{display:block;height:100%;width:25%;background:#000;transition:width .4s ease}
+.step{border:0;margin:0;padding:0;min-width:0}.step legend{font-size:22px;line-height:1.1;text-transform:uppercase;margin-bottom:18px;padding:0}
+.opts{display:grid;gap:8px;border-radius:14px}.opts.bad,.fi.bad{animation:shake .45s}
+@keyframes shake{25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
+.opt-r input,.chip-c input,.seg input{position:absolute;opacity:0;pointer-events:none}
+.opt-r span{display:block;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14.5px;cursor:pointer;transition:border-color .2s,background .2s}
+.opt-r span:hover{border-color:#000}.opt-r input:checked+span{border-color:#000;background:var(--blue)}
+.opt-r input:focus-visible+span,.chip-c input:focus-visible+span,.seg input:focus-visible+span{outline:2px solid #000;outline-offset:2px}
+.sub{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--grey);margin:18px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip-c span{display:inline-block;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;font-size:13.5px;cursor:pointer;transition:border-color .2s,background .2s}
+.chip-c input:checked+span{border-color:#000;background:var(--blue)}
+.seg{display:inline-flex;border:1.5px solid #000;border-radius:999px;padding:3px;margin-bottom:10px}
+.seg span{display:block;padding:8px 18px;border-radius:999px;font-size:13px;cursor:pointer}.seg input:checked+span{background:#000;color:#fff}
+.fi{display:block;width:100%;box-sizing:border-box;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;font:inherit;font-size:15px;margin-top:10px;background:#fff;color:#000}
+.fi:focus{outline:none;border-color:#000}textarea.fi{resize:vertical;margin-top:14px}
+.consent{font-size:12px;color:var(--grey);margin:12px 0 0}.consent a{color:inherit}
+.hp{position:absolute;left:-9999px}
+.sheet .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px}
+.sheet .nav .dm{margin:0 0 0 auto;border:0;cursor:pointer}.sheet .nav .dm[disabled]{opacity:.6}
+.sheet .back{background:none;border:0;font:inherit;font-size:13px;cursor:pointer;padding:8px 0;color:#000}
+.done{padding:20px 0 6px}.done .H{font-size:28px;text-transform:uppercase;margin-bottom:10px}
+.alt{font-size:12.5px;color:var(--grey);margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line)}.alt a{color:#000}
+.dm-book{background:var(--blue);color:#000}.dm.dm-book svg path{stroke:#000}
+@media (max-width:700px){.sheet{align-items:flex-end;padding:0}.sheet-in{border-radius:22px 22px 0 0;padding:26px 20px 20px;max-height:92vh}.step legend{font-size:19px}.sheet .nav .dm{width:auto}}
+
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}.ctas .dm{margin-bottom:0}
+.dm-mail{background:transparent;color:#000;border:1.5px solid #000;padding:14.5px 22.5px}
+.dm.dm-mail svg{fill:none}.dm.dm-mail svg rect,.dm.dm-mail svg path{stroke:#000}
+.ft-dm.dm-mail{padding:11.5px 16.5px;margin-top:10px}
+.cities span{transition:background-color .45s ease}
+.dm svg{width:20px;height:20px}.dm svg path{stroke:#fff}
 .iglink{display:inline-flex;align-items:center;gap:10px}.iglink .igi{width:1.1em;height:1.1em;flex:none}
 .contact .ch .lbl{color:#000;opacity:.55;margin-bottom:4px}
 .contact .ch a{font-family:var(--H);font-size:20px;text-decoration:none;text-transform:uppercase}
@@ -270,8 +309,8 @@ footer a{text-decoration:none}
 .wo{display:inline-flex;align-items:center;gap:8px;margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px;font-size:13px;font-weight:600;text-decoration:none}
 .wo svg{width:16px;height:16px}.wo:hover{border-color:#000}
 @media (max-width:900px){.wo{margin-left:0}.trust .lbl{flex-basis:100%}}
-.gr-links{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px;font-size:14px;font-weight:600}
-.gr-links a{text-decoration:none;border-bottom:1px solid #000;padding-bottom:2px}.gr-links a:hover{border-color:var(--blue)}
+.gr-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;font-size:14px;font-weight:600}
+.gr-links a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--H);text-transform:uppercase;font-size:12px;letter-spacing:.02em;padding:13px 20px;border-radius:999px;border:1.5px solid #000;background:#000;color:#fff;transition:transform .25s}.gr-links a+a{background:transparent;color:#000}.gr-links a:hover{transform:translateY(-2px)}
 .cookie{position:fixed;left:20px;bottom:20px;z-index:60;max-width:360px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.08);padding:16px 18px;font-size:13px;line-height:1.5;display:none;gap:14px;align-items:center}
 .cookie.show{display:flex}.cookie a{color:#000;font-weight:600}
 .cookie button{flex:none;border:0;border-radius:999px;background:var(--blue);font-family:var(--H);text-transform:uppercase;font-size:12px;padding:10px 16px;cursor:pointer}
@@ -296,7 +335,7 @@ footer a{text-decoration:none}
   .gr-head .arrows{display:none}
   .gbadge{order:0}
   .trust{gap:8px}.chip{font-size:12px;padding:6px 7px 6px 12px}
-  .gr-links{gap:18px;font-size:13px}
+  .gr-links{gap:10px;font-size:13px}.gr-links a{flex:1;justify-content:center;padding:13px 14px;font-size:11px}
   .services,.gallery,.about,.contact{padding:64px 0}
   .services h2,.gal-head h2,.contact h2{font-size:30px}
   .services .cards{margin-top:22px}
@@ -310,7 +349,7 @@ footer a{text-decoration:none}
   .about .cta,.ab .cta{font-size:11.5px;padding:13px 18px;white-space:normal;text-align:left}
   .more{display:inline-block;margin:18px 0 0}
   .contact-grid{gap:34px}
-  .dm{width:100%;justify-content:center;margin-bottom:26px}
+  .dm{width:100%;justify-content:center;margin-bottom:26px}.ctas{margin-bottom:26px}
   .ft-top .ft-col:last-child{grid-column:1/-1}.ft-dm{margin:14px 0 0}
   .cookie{padding:12px 14px;font-size:12px;gap:10px;border-radius:12px}
   .cookie button{padding:8px 12px;font-size:11px}
@@ -319,6 +358,32 @@ footer a{text-decoration:none}
   .fab.away{opacity:0;transform:translateY(20px);pointer-events:none}
   body.ck .fab{bottom:92px}
 }
+
+/* mobile hero: tighter gap to Pia's block; moving city pill without layout jumps */
+.hero.hero-m{padding-bottom:28px}
+.hero-m .cities{gap:6px 2px;margin-left:-8px}
+.hero-m .cities span{position:relative;padding:4px 8px;border-radius:999px;margin-right:8px}
+.hero-m .cities span:not(:last-child):after{position:absolute;right:-7px;top:50%;margin:0;transform:translateY(-50%)}
+.hero-m .cities .home{padding:4px 8px}
+
+/* booking form: undo the old contact-form rules (form grid, uppercase grey labels, underline inputs) */
+.sheet [hidden]{display:none!important}
+#book-form{display:block}
+#book-form label{display:block;font-size:inherit;font-weight:inherit;text-transform:none;opacity:1;margin:0;color:#000}
+#book-form .chip-c,#book-form .seg label{display:inline-block}
+#book-form .fi{border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;font-size:15px}
+#book-form .fi:focus{border-color:#000}
+#book-form .opt-r span,#book-form .chip-c span{text-transform:none;color:#000}
+#book-form .seg input:checked+span{background:#000;color:#fff}
+#book-form .back{width:auto;height:auto;border-radius:0;display:inline-block}
+#book-form .back:hover{background:none;opacity:.6}
+
+/* hero: Google rating right under the main button */
+.hero-act{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.hero-rate{display:inline-flex;align-items:center;gap:6px;font-size:13px;text-decoration:none;color:#000}
+.hero-rate .s{color:#F5B301;letter-spacing:1px}.hero-rate:hover{opacity:.65}
+.hero-m .hero-rate{display:flex;margin-top:14px}
+@media (max-width:900px){.hero-act{align-items:flex-start}}
 </style>
 </head>
 <body data-booking="Reserva:">
@@ -348,7 +413,7 @@ footer a{text-decoration:none}
       <h1 class="H">Sobre Pia Miriam</h1>
       <p class="lead">Coloración profesional con una experiencia exclusiva uno a uno y un ambiente relajado en la comodidad de tu casa.</p>
       <p>Mi trayectoria como peluquera empezó en 2010 en un prestigioso salón de Kensington High Street, donde aprendí el método de corte de Vidal Sassoon, antes de pasar a trabajar en pleno Covent Garden, en Londres, en un salón premiado. Allí tuve la suerte de aprender de un equipo muy cualificado hasta convertirme en especialista en color, y hoy me enorgullece mucho mi trabajo.</p><p>Creo un look personalizado que se adapta a ‘tu’ estilo y realza tu belleza natural; ya busques un rubio suave efecto sol, un rubio de aspecto natural, un ceniza de tendencia o un rubio súper veraniego. ¡Cuenta conmigo!</p><p>Viajo a menudo para atender a clientas en Madrid y Lisboa a lo largo del año. Ofrezco servicios de coloración profesionales y personalizados en la comodidad de tu casa, tu hotel o tu espacio privado; llevo todo lo necesario para conseguir resultados bonitos y naturales, estés donde estés.</p>
-      <a class="cta" href="/es#contact">Escríbeme para consultar disponibilidad. <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
+      <a class="cta" href="/es#contact">Escríbeme para consultar disponibilidad <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
     </div>
   </div></section>
 </main>
@@ -358,8 +423,8 @@ footer a{text-decoration:none}
     <div class="ft-col"><div class="lbl">Menú</div><ul>
       <li><a href="/es#services">Servicios</a></li><li><a href="/es#gallery">Trabajos</a></li>
       <li><a href="/es-about">Sobre mí</a></li><li><a href="/es#contact">Contacto</a></li></ul></div>
-    <div class="ft-col"><div class="lbl">Contacto</div><ul><li><a href="mailto:piamiriam@gmail.com">piamiriam@gmail.com</a></li></ul>
-      <a class="dm ft-dm" href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>Escríbeme por Instagram <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></div>
+    <div class="ft-col"><div class="lbl">Contacto</div><ul></ul>
+      <a class="dm ft-dm" href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>Escríbeme por Instagram <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="dm dm-mail ft-dm" href="mailto:piamiriam@gmail.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.6"/><path d="M3.5 6.5 12 13l8.5-6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Escríbeme un email <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></div>
   </div>
   <div class="ft-bot"><span>© 2026 Colours by Pia Miriam</span><span class="legal"><a href="/privacy">Privacidad y cookies</a><span class="langs"><a href="/about" hreflang="en" lang="en">EN</a><a href="/es-about" hreflang="es" lang="es" class=cur>ES</a><a href="/pt-about" hreflang="pt" lang="pt">PT</a></span></span></div>
 </div></footer>

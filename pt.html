@@ -44,11 +44,11 @@ header{position:fixed;top:0;left:0;right:0;z-index:40;color:#000;background:rgba
 
 /* hero */
 .hero{background:#fff}
-.hero-d{padding:190px 0 110px}
-.hero-d h1{font-size:clamp(44px,7.2vw,112px);line-height:.88}
-.hero-m{display:none;padding:120px 0 60px}
+.hero-d{padding:190px 0 70px}
+.hero-d h1{font-size:clamp(52px,9vw,140px);line-height:.88}
+.hero-m{display:none;padding:120px 0 40px}
 .hero-m .lbl{color:var(--grey);margin-bottom:18px}
-.hero-m .hname{font-size:clamp(36px,10.5vw,50px);line-height:.9}
+.hero-m .hname{font-size:clamp(40px,11.8vw,58px);line-height:.9}
 .hero-m .hero-in{width:100%}
 .hero-text{font-size:15.5px;line-height:1.55;margin-top:22px}
 .cities{display:flex;flex-wrap:wrap;align-items:center;gap:6px 0;margin:24px 0 28px;font-family:var(--H);text-transform:uppercase;font-size:11px;letter-spacing:.02em}
@@ -95,10 +95,11 @@ header{position:fixed;top:0;left:0;right:0;z-index:40;color:#000;background:rgba
 
 /* about text */
 .about{padding:110px 0;background:#fff}
+.hero-m + .about{padding-top:20px}
 .about-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;align-items:center}
 .portrait-wrap{margin:0}.got{font-family:var(--H);text-transform:uppercase;font-size:clamp(18px,1.6vw,24px);margin-top:16px;letter-spacing:-.01em}
 .about .portrait{border-radius:6px;overflow:hidden;aspect-ratio:4/5}
-.about .portrait img{width:100%;height:115%;object-fit:cover;object-position:50% 40%}
+.about .portrait img{width:100%;height:115%;object-fit:cover;object-position:50% 72%}
 .about h2{font-size:clamp(28px,3vw,44px);margin-bottom:20px}
 .about .big{font-family:var(--H);text-transform:uppercase;font-size:clamp(15px,1.3vw,18px);line-height:1.2;margin-bottom:18px}
 .about p{margin-bottom:16px;max-width:600px}
@@ -194,7 +195,45 @@ form .picked.on{display:inline-flex}form .picked button{border:0;background:none
 .contact .ch{margin-bottom:26px}
 .dm{display:inline-flex;align-items:center;gap:12px;background:#000;color:#fff;text-decoration:none;font-family:var(--H);text-transform:uppercase;font-size:13px;padding:16px 24px;border-radius:999px;margin-bottom:34px;transition:transform .25s}
 .contact .ch a[href^="mailto"]{text-transform:none}
-.dm:hover{transform:translateY(-2px)}.dm svg{width:20px;height:20px}.dm svg path{stroke:#fff}
+.dm:hover{transform:translateY(-2px)}
+.sheet{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .3s}
+.sheet.open{opacity:1;pointer-events:auto}
+.sheet-in{position:relative;background:#fff;border-radius:22px;padding:30px 30px 22px;max-width:540px;width:100%;max-height:calc(100vh - 32px);overflow:auto;transform:translateY(14px);transition:transform .3s}
+.sheet.open .sheet-in{transform:none}
+.sheet .x{position:absolute;top:18px;right:20px;background:none;border:0;font-size:12px;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;color:#000;z-index:2}
+.prog{margin:0 70px 22px 0}.prog .lbl{display:block;color:var(--grey);margin-bottom:10px}.prog .lbl b{color:#000}
+.prog i{display:block;height:3px;background:var(--line);border-radius:3px;overflow:hidden}.prog .bar{display:block;height:100%;width:25%;background:#000;transition:width .4s ease}
+.step{border:0;margin:0;padding:0;min-width:0}.step legend{font-size:22px;line-height:1.1;text-transform:uppercase;margin-bottom:18px;padding:0}
+.opts{display:grid;gap:8px;border-radius:14px}.opts.bad,.fi.bad{animation:shake .45s}
+@keyframes shake{25%{transform:translateX(-6px)}50%{transform:translateX(6px)}75%{transform:translateX(-3px)}}
+.opt-r input,.chip-c input,.seg input{position:absolute;opacity:0;pointer-events:none}
+.opt-r span{display:block;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;font-size:14.5px;cursor:pointer;transition:border-color .2s,background .2s}
+.opt-r span:hover{border-color:#000}.opt-r input:checked+span{border-color:#000;background:var(--blue)}
+.opt-r input:focus-visible+span,.chip-c input:focus-visible+span,.seg input:focus-visible+span{outline:2px solid #000;outline-offset:2px}
+.sub{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--grey);margin:18px 0 10px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip-c span{display:inline-block;border:1.5px solid var(--line);border-radius:999px;padding:10px 16px;font-size:13.5px;cursor:pointer;transition:border-color .2s,background .2s}
+.chip-c input:checked+span{border-color:#000;background:var(--blue)}
+.seg{display:inline-flex;border:1.5px solid #000;border-radius:999px;padding:3px;margin-bottom:10px}
+.seg span{display:block;padding:8px 18px;border-radius:999px;font-size:13px;cursor:pointer}.seg input:checked+span{background:#000;color:#fff}
+.fi{display:block;width:100%;box-sizing:border-box;border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;font:inherit;font-size:15px;margin-top:10px;background:#fff;color:#000}
+.fi:focus{outline:none;border-color:#000}textarea.fi{resize:vertical;margin-top:14px}
+.consent{font-size:12px;color:var(--grey);margin:12px 0 0}.consent a{color:inherit}
+.hp{position:absolute;left:-9999px}
+.sheet .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px}
+.sheet .nav .dm{margin:0 0 0 auto;border:0;cursor:pointer}.sheet .nav .dm[disabled]{opacity:.6}
+.sheet .back{background:none;border:0;font:inherit;font-size:13px;cursor:pointer;padding:8px 0;color:#000}
+.done{padding:20px 0 6px}.done .H{font-size:28px;text-transform:uppercase;margin-bottom:10px}
+.alt{font-size:12.5px;color:var(--grey);margin:18px 0 0;padding-top:14px;border-top:1px solid var(--line)}.alt a{color:#000}
+.dm-book{background:var(--blue);color:#000}.dm.dm-book svg path{stroke:#000}
+@media (max-width:700px){.sheet{align-items:flex-end;padding:0}.sheet-in{border-radius:22px 22px 0 0;padding:26px 20px 20px;max-height:92vh}.step legend{font-size:19px}.sheet .nav .dm{width:auto}}
+
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}.ctas .dm{margin-bottom:0}
+.dm-mail{background:transparent;color:#000;border:1.5px solid #000;padding:14.5px 22.5px}
+.dm.dm-mail svg{fill:none}.dm.dm-mail svg rect,.dm.dm-mail svg path{stroke:#000}
+.ft-dm.dm-mail{padding:11.5px 16.5px;margin-top:10px}
+.cities span{transition:background-color .45s ease}
+.dm svg{width:20px;height:20px}.dm svg path{stroke:#fff}
 .iglink{display:inline-flex;align-items:center;gap:10px}.iglink .igi{width:1.1em;height:1.1em;flex:none}
 .contact .ch .lbl{color:#000;opacity:.55;margin-bottom:4px}
 .contact .ch a{font-family:var(--H);font-size:20px;text-decoration:none;text-transform:uppercase}
@@ -270,8 +309,8 @@ footer a{text-decoration:none}
 .wo{display:inline-flex;align-items:center;gap:8px;margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px;font-size:13px;font-weight:600;text-decoration:none}
 .wo svg{width:16px;height:16px}.wo:hover{border-color:#000}
 @media (max-width:900px){.wo{margin-left:0}.trust .lbl{flex-basis:100%}}
-.gr-links{display:flex;gap:26px;flex-wrap:wrap;margin-top:22px;font-size:14px;font-weight:600}
-.gr-links a{text-decoration:none;border-bottom:1px solid #000;padding-bottom:2px}.gr-links a:hover{border-color:var(--blue)}
+.gr-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;font-size:14px;font-weight:600}
+.gr-links a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--H);text-transform:uppercase;font-size:12px;letter-spacing:.02em;padding:13px 20px;border-radius:999px;border:1.5px solid #000;background:#000;color:#fff;transition:transform .25s}.gr-links a+a{background:transparent;color:#000}.gr-links a:hover{transform:translateY(-2px)}
 .cookie{position:fixed;left:20px;bottom:20px;z-index:60;max-width:360px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.08);padding:16px 18px;font-size:13px;line-height:1.5;display:none;gap:14px;align-items:center}
 .cookie.show{display:flex}.cookie a{color:#000;font-weight:600}
 .cookie button{flex:none;border:0;border-radius:999px;background:var(--blue);font-family:var(--H);text-transform:uppercase;font-size:12px;padding:10px 16px;cursor:pointer}
@@ -296,7 +335,7 @@ footer a{text-decoration:none}
   .gr-head .arrows{display:none}
   .gbadge{order:0}
   .trust{gap:8px}.chip{font-size:12px;padding:6px 7px 6px 12px}
-  .gr-links{gap:18px;font-size:13px}
+  .gr-links{gap:10px;font-size:13px}.gr-links a{flex:1;justify-content:center;padding:13px 14px;font-size:11px}
   .services,.gallery,.about,.contact{padding:64px 0}
   .services h2,.gal-head h2,.contact h2{font-size:30px}
   .services .cards{margin-top:22px}
@@ -310,7 +349,7 @@ footer a{text-decoration:none}
   .about .cta,.ab .cta{font-size:11.5px;padding:13px 18px;white-space:normal;text-align:left}
   .more{display:inline-block;margin:18px 0 0}
   .contact-grid{gap:34px}
-  .dm{width:100%;justify-content:center;margin-bottom:26px}
+  .dm{width:100%;justify-content:center;margin-bottom:26px}.ctas{margin-bottom:26px}
   .ft-top .ft-col:last-child{grid-column:1/-1}.ft-dm{margin:14px 0 0}
   .cookie{padding:12px 14px;font-size:12px;gap:10px;border-radius:12px}
   .cookie button{padding:8px 12px;font-size:11px}
@@ -319,6 +358,32 @@ footer a{text-decoration:none}
   .fab.away{opacity:0;transform:translateY(20px);pointer-events:none}
   body.ck .fab{bottom:92px}
 }
+
+/* mobile hero: tighter gap to Pia's block; moving city pill without layout jumps */
+.hero.hero-m{padding-bottom:28px}
+.hero-m .cities{gap:6px 2px;margin-left:-8px}
+.hero-m .cities span{position:relative;padding:4px 8px;border-radius:999px;margin-right:8px}
+.hero-m .cities span:not(:last-child):after{position:absolute;right:-7px;top:50%;margin:0;transform:translateY(-50%)}
+.hero-m .cities .home{padding:4px 8px}
+
+/* booking form: undo the old contact-form rules (form grid, uppercase grey labels, underline inputs) */
+.sheet [hidden]{display:none!important}
+#book-form{display:block}
+#book-form label{display:block;font-size:inherit;font-weight:inherit;text-transform:none;opacity:1;margin:0;color:#000}
+#book-form .chip-c,#book-form .seg label{display:inline-block}
+#book-form .fi{border:1.5px solid var(--line);border-radius:14px;padding:14px 16px;background:#fff;font-size:15px}
+#book-form .fi:focus{border-color:#000}
+#book-form .opt-r span,#book-form .chip-c span{text-transform:none;color:#000}
+#book-form .seg input:checked+span{background:#000;color:#fff}
+#book-form .back{width:auto;height:auto;border-radius:0;display:inline-block}
+#book-form .back:hover{background:none;opacity:.6}
+
+/* hero: Google rating right under the main button */
+.hero-act{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.hero-rate{display:inline-flex;align-items:center;gap:6px;font-size:13px;text-decoration:none;color:#000}
+.hero-rate .s{color:#F5B301;letter-spacing:1px}.hero-rate:hover{opacity:.65}
+.hero-m .hero-rate{display:flex;margin-top:14px}
+@media (max-width:900px){.hero-act{align-items:flex-start}}
 </style>
 </head>
 <body data-booking="Marcação:">
@@ -344,22 +409,41 @@ footer a{text-decoration:none}
   <section class="hero hero-d">
     <div class="wrap hero-in">
       <h1 class="H"><span class="ln"><span>Colours by</span></span><span class="ln"><span>Pia Miriam</span></span></h1>
-      <div class="journey"><div class="lbl fade">Especialista em louros com mais de 14 anos de experiência.</div><ol id="journey"><li><small>LDN</small><span>Londres</span></li><li><small>MAD</small><span>Madrid</span></li><li><small>LIS</small><span>Lisboa</span></li><li><small>HOJE</small><span>A sua casa</span></li></ol></div>
+      <div class="journey"><ol id="journey"><li><small>LDN</small><span>Londres</span></li><li><small>MAD</small><span>Madrid</span></li><li><small>LIS</small><span>Lisboa</span></li><li><small>HOJE</small><span>A sua casa</span></li></ol></div>
       <div class="hero-meta">
         <p class="fade">Coloração profissional com uma experiência exclusiva e personalizada, num ambiente descontraído, no conforto da sua casa.</p>
-        <a class="cta fade" href="#contact">Contacto <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
+        <div class="hero-act fade"><a class="cta" href="#contact" data-pkg="Consulta de cor">Marque uma consulta de cor gratuita <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><span class="s">★★★★★</span> <b>5.0</b> · 16 avaliações no Google</a></div>
       </div>
     </div>
   </section>
   <section class="hero hero-m">
     <div class="wrap hero-in">
-      <div class="lbl">Especialista em louros com mais de 14 anos de experiência.</div>
       <div class="H hname"><span class="ln"><span>Colours by</span></span><span class="ln"><span>Pia Miriam</span></span></div>
       <p class="hero-text">Coloração profissional com uma experiência exclusiva e personalizada, num ambiente descontraído, no conforto da sua casa.</p>
       <div class="cities" aria-label="Londres, Madrid, Lisboa, A sua casa"><span>Londres</span><span>Madrid</span><span>Lisboa</span><span class=home>A sua casa</span></div>
-      <a class="cta" href="#contact">Contacto <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
+      <a class="cta" href="#contact" data-pkg="Consulta de cor">Marque uma consulta de cor gratuita <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><span class="s">★★★★★</span> <b>5.0</b> · 16 avaliações no Google</a>
     </div>
   </section>
+  <section class="about" id="about"><div class="wrap about-grid">
+    <figure class="portrait-wrap"><div class="portrait"><img class="par" src="/pia-original.jpg" alt="Pia Miriam"></div></figure>
+    <div>
+      <h2 class="H rv">Pia Miriam</h2>
+      <p class="big rv">Especialista em louros com mais de 14 anos de experiência.</p>
+      <p class="rv">Crio um visual personalizado que se adapta ao ‘seu’ estilo e realça a sua beleza natural; quer procure um louro suave com efeito sol, um louro de aspeto natural, um cinza da moda ou um louro super verão. Pode contar comigo!</p>
+      <p class="rv" style="margin-top:26px"><a class="cta" href="#contact">Contacte-me para saber a disponibilidade <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="more" href="/pt-about">Leia a minha história →</a></p>
+    </div>
+  </div></section>
+  <section class="gallery" id="gallery"><div class="wrap">
+    <div class="gal-head"><h2 class="H rv">O trabalho</h2></div>
+    <div class="grid">
+      <figure class="sc"><img src="/foto2.jpg" loading="lazy" alt="Balayage efeito sol"><figcaption><b>01</b> / 06</figcaption></figure>
+      <figure class="sc"><img src="/foto6.jpg" loading="lazy" alt="Bob louro gelo"><figcaption><b>02</b> / 06</figcaption></figure>
+      <figure class="sc"><img src="/foto5.jpg" loading="lazy" alt="Louro esbatido"><figcaption><b>03</b> / 06</figcaption></figure>
+      <figure class="sc"><img src="/foto7.jpg" loading="lazy" alt="Balayage quente"><figcaption><b>04</b> / 06</figcaption></figure>
+      <figure class="sc"><img src="/foto3.jpg" loading="lazy" alt="Louro suave"><figcaption><b>05</b> / 06</figcaption></figure>
+      <figure class="sc"><img src="/foto4.jpg" loading="lazy" alt="Louro super verão"><figcaption><b>06</b> / 06</figcaption></figure>
+    </div>
+  </div></section>
   <section class="quote"><div class="wrap">
     <blockquote id="q">“What I received was a professional, bespoke and efficient service in the comfort of my own home and the full attention of Pia, who listened to everything I wanted and did exactly that. I’m blown away, so pleased and would highly recommend her.”</blockquote>
     <cite>— Marian · Google review</cite>
@@ -384,46 +468,37 @@ footer a{text-decoration:none}
     <div class="addons"><span class="t">Extras</span><span class="it">Corte de cabelo<b>+£55</b></span><span class="it">Brushing profissional<b>+£40</b></span><small>*Disponível como extra após um serviço de cor</small></div>
     <div class="notes"><p>*Todos os serviços de cor incluem tonalizante e um brushing simples para complementar a cor.</p><p>**As marcações fora de Londres podem ter preços de acordo com a localização. Contacte-me para um orçamento personalizado.</p></div>
   </div></section>
-  <section class="gallery" id="gallery"><div class="wrap">
-    <div class="gal-head"><h2 class="H rv">O trabalho</h2></div>
-    <div class="grid">
-      <figure class="sc"><img src="/foto2.jpg" loading="lazy" alt="Balayage efeito sol"><figcaption><b>01</b> / 06</figcaption></figure>
-      <figure class="sc"><img src="/foto6.jpg" loading="lazy" alt="Bob louro gelo"><figcaption><b>02</b> / 06</figcaption></figure>
-      <figure class="sc"><img src="/foto5.jpg" loading="lazy" alt="Louro esbatido"><figcaption><b>03</b> / 06</figcaption></figure>
-      <figure class="sc"><img src="/foto7.jpg" loading="lazy" alt="Balayage quente"><figcaption><b>04</b> / 06</figcaption></figure>
-      <figure class="sc"><img src="/foto3.jpg" loading="lazy" alt="Louro suave"><figcaption><b>05</b> / 06</figcaption></figure>
-      <figure class="sc"><img src="/foto4.jpg" loading="lazy" alt="Louro super verão"><figcaption><b>06</b> / 06</figcaption></figure>
-    </div>
-  </div></section>
-  <section class="about" id="about"><div class="wrap about-grid">
-    <figure class="portrait-wrap"><div class="portrait"><img class="par" src="/pia-original.jpg" alt="Pia Miriam"></div></figure>
-    <div>
-      <h2 class="H rv">Pia Miriam</h2>
-      <p class="big rv">Coloração profissional com uma experiência exclusiva e personalizada, num ambiente descontraído, no conforto da sua casa.</p>
-      <p class="rv">Crio um visual personalizado que se adapta ao ‘seu’ estilo e realça a sua beleza natural; quer procure um louro suave com efeito sol, um louro de aspeto natural, um cinza da moda ou um louro super verão. Pode contar comigo!</p>
-      <p class="rv" style="margin-top:26px"><a class="cta" href="#contact">Contacte-me para saber a disponibilidade. <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="more" href="/pt-about">Leia a minha história →</a></p>
-    </div>
-  </div></section>
   <section class="contact" id="contact"><div class="wrap">
     <h2 class="H">Contacto</h2>
     <div class="contact-grid">
       <div>
         <p style="font-size:16px;margin-bottom:30px">Contacte-me para saber a disponibilidade.</p>
-        <a class="dm" href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>Envie-me mensagem no Instagram <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
-        <div class="ch"><div class="lbl">Email</div><a href="mailto:piamiriam@gmail.com">piamiriam@gmail.com</a></div>
+        <div class="ctas"><a class="dm dm-book" href="#book-form" data-open-form>Marcar online <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="dm" href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>Envie-me mensagem no Instagram <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
+        <a class="dm dm-mail" href="mailto:piamiriam@gmail.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.6"/><path d="M3.5 6.5 12 13l8.5-6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Envie-me um email <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></div>
       </div>
       <div id="book" hidden data-email="piamiriam@gmail.com" data-subject="Marcação:" data-msg="Olá Pia, gostaria de marcar: {service}. As minhas datas preferidas são: "></div>
     </div>
   </div></section>
-</main>
+</main>  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="bf-t"><div class="sheet-in">
+    <button type="button" class="x">Fechar</button>
+    <form id="book-form" novalidate data-key="0deb6c3c-cfbc-4be5-8eee-0d78dfba8037" data-subject="Marcação:" data-error="Algo correu mal. Envie mensagem à Pia pelo Instagram, por favor." data-sending="A enviar…">
+      <div class="prog"><span class="lbl" id="bf-t">Passo <b class="cur">1</b> de 4</span><i><b class="bar"></b></i></div>
+      <fieldset class="step" data-step="0"><legend class="H">O que gostaria de fazer?</legend><div class="opts"><label class="opt-r"><input type="radio" name="service" value="Consulta de cor (Grátis)"><span>Consulta de cor (Grátis)</span></label><label class="opt-r"><input type="radio" name="service" value="Madeixas · Meia cabeça (desde £180)"><span>Madeixas · Meia cabeça (desde £180)</span></label><label class="opt-r"><input type="radio" name="service" value="Madeixas · Cabeça inteira (desde £220)"><span>Madeixas · Cabeça inteira (desde £220)</span></label><label class="opt-r"><input type="radio" name="service" value="Balayage · Meia cabeça (desde £200)"><span>Balayage · Meia cabeça (desde £200)</span></label><label class="opt-r"><input type="radio" name="service" value="Balayage · Cabeça inteira (desde £240)"><span>Balayage · Cabeça inteira (desde £240)</span></label></div><div class="sub">Extras (opcional)</div><div class="chips"><label class="chip-c"><input type="checkbox" name="addons" value="Corte de cabelo (+£55)"><span>Corte de cabelo (+£55)</span></label><label class="chip-c"><input type="checkbox" name="addons" value="Brushing profissional (+£40)"><span>Brushing profissional (+£40)</span></label></div></fieldset><fieldset class="step" data-step="1" hidden><legend class="H">Onde está?</legend><div class="opts"><label class="opt-r"><input type="radio" name="city" value="Londres"><span>Londres</span></label><label class="opt-r"><input type="radio" name="city" value="Madrid"><span>Madrid</span></label><label class="opt-r"><input type="radio" name="city" value="Lisboa"><span>Lisboa</span></label><label class="opt-r"><input type="radio" name="city" value="__other"><span>Noutro sítio</span></label></div><input class="fi other" type="text" name="city_other" placeholder="Que cidade?" hidden></fieldset><fieldset class="step" data-step="2" hidden><legend class="H">Quando lhe dá mais jeito?</legend><div class="sub">Escolha todas as que quiser</div><div class="chips"><label class="chip-c"><input type="checkbox" name="when" value="Dias úteis"><span>Dias úteis</span></label><label class="chip-c"><input type="checkbox" name="when" value="Fins de semana"><span>Fins de semana</span></label><label class="chip-c"><input type="checkbox" name="when" value="Manhãs"><span>Manhãs</span></label><label class="chip-c"><input type="checkbox" name="when" value="Tardes"><span>Tardes</span></label></div><textarea class="fi" name="note" rows="3" placeholder="Algo que a Pia deva saber? (opcional)"></textarea></fieldset><fieldset class="step" data-step="3" hidden><legend class="H">Os seus dados</legend><input class="fi" type="text" name="name" placeholder="O seu nome" autocomplete="name" required><div class="sub">Como prefere que a Pia responda?</div><div class="seg"><label><input type="radio" name="via" value="instagram" checked><span>Instagram</span></label><label><input type="radio" name="via" value="email"><span>Email</span></label></div><input class="fi" type="text" name="instagram" placeholder="O seu @ do Instagram" autocomplete="off"><input class="fi" type="email" name="email" placeholder="O seu email" autocomplete="email" hidden><p class="consent">Os seus dados só são usados para lhe responder. <a href="/privacy" target="_blank">Privacidade e cookies</a></p></fieldset>
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+      <div class="nav"><button type="button" class="back" hidden>← Voltar</button><button type="button" class="next dm">Seguinte <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></button><button type="submit" class="send dm" hidden>Enviar <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></button></div>
+    </form>
+    <div class="done" hidden><div class="H">Obrigada</div><p>A sua mensagem foi enviada. A Pia entrará em contacto consigo em breve.</p></div>
+    <p class="alt">Prefere escrever diretamente? <a href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener">Envie-me mensagem no Instagram ↗</a></p>
+  </div></div>
+
 <footer><div class="wrap">
   <div class="ft-top">
     <a class="ft-brand" href="/pt">Colours by<br>Pia Miriam</a>
     <div class="ft-col"><div class="lbl">Menu</div><ul>
       <li><a href="/pt#services">Serviços</a></li><li><a href="/pt#gallery">Trabalhos</a></li>
       <li><a href="/pt-about">Sobre mim</a></li><li><a href="/pt#contact">Contacto</a></li></ul></div>
-    <div class="ft-col"><div class="lbl">Contacto</div><ul><li><a href="mailto:piamiriam@gmail.com">piamiriam@gmail.com</a></li></ul>
-      <a class="dm ft-dm" href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>Envie-me mensagem no Instagram <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></div>
+    <div class="ft-col"><div class="lbl">Contacto</div><ul></ul>
+      <a class="dm ft-dm" href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener"><svg class="igi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>Envie-me mensagem no Instagram <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="dm dm-mail ft-dm" href="mailto:piamiriam@gmail.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.6"/><path d="M3.5 6.5 12 13l8.5-6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Envie-me um email <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></div>
   </div>
   <div class="ft-bot"><span>© 2026 Colours by Pia Miriam</span><span class="legal"><a href="/privacy">Privacidade e cookies</a><span class="langs"><a href="/" hreflang="en" lang="en">EN</a><a href="/es" hreflang="es" lang="es">ES</a><a href="/pt" hreflang="pt" lang="pt" class=cur>PT</a></span></span></div>
 </div></footer>
@@ -516,18 +591,91 @@ let tx = null;
 lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive: true});
 lb.addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) show(at + (dx < 0 ? 1 : -1)); tx = null; });
 
-// BOOK A PACKAGE: no shop, so a card opens an email to Pia with the service already written
+// MOBILE HERO: the blue pill moves from one city to the next
 {
-  const bk = document.getElementById('book');
-  const go = name => {
-    const subject = bk.dataset.subject + ' ' + name;
-    const body = bk.dataset.msg.replace('{service}', name);
-    location.href = 'mailto:' + bk.dataset.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  };
-  document.querySelectorAll('[data-pkg]').forEach(c => {
-    c.addEventListener('click', ev => { ev.preventDefault(); go(c.dataset.pkg); });
-    c.addEventListener('keydown', ev => { if (ev.key === 'Enter') go(c.dataset.pkg); });
-  });
+  const cs = [...document.querySelectorAll('.hero-m .cities span')];
+  if (cs.length > 1 && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let i = cs.findIndex(c => c.classList.contains('home'));
+    setTimeout(() => setInterval(() => {
+      cs[i].classList.remove('home'); i = (i + 1) % cs.length; cs[i].classList.add('home');
+    }, 1600), 1800);
+  }
+}
+
+// BOOKING FORM: Book buttons, the hero/about buttons and the floating button open a 4-step form (sent with Web3Forms).
+// Without a form key there is no form, and the buttons simply scroll to Contact.
+{
+  const sh = document.getElementById('sheet'), f = document.getElementById('book-form');
+  if (sh && f) {
+    const steps = [...f.querySelectorAll('.step')], n = steps.length;
+    const back = f.querySelector('.back'), next = f.querySelector('.next'), send = f.querySelector('.send');
+    let i = 0;
+    const show = k => {
+      i = k; steps.forEach((s, j) => s.hidden = j !== i);
+      back.hidden = i === 0; next.hidden = i === n - 1; send.hidden = i !== n - 1;
+      f.querySelector('.cur').textContent = i + 1;
+      f.querySelector('.bar').style.width = ((i + 1) / n * 100) + '%';
+    };
+    const val = name => { const x = f.querySelector(`[name="${name}"]:checked`); return x ? x.value : ''; };
+    const vals = name => [...f.querySelectorAll(`[name="${name}"]:checked`)].map(x => x.value);
+    const bad = el => { el.classList.add('bad'); setTimeout(() => el.classList.remove('bad'), 900); };
+    const ok = () => {
+      const s = steps[i];
+      if (i === 0 && !val('service')) { bad(s.querySelector('.opts')); return false; }
+      if (i === 1) {
+        if (!val('city')) { bad(s.querySelector('.opts')); return false; }
+        if (val('city') === '__other' && !f.city_other.value.trim()) { bad(f.city_other); f.city_other.focus(); return false; }
+      }
+      if (i === n - 1) {
+        if (!f.name.value.trim()) { bad(f.name); f.name.focus(); return false; }
+        const c = val('via') === 'email' ? f.email : f.instagram;
+        if (!c.value.trim() || (c === f.email && !/^\S+@\S+\.\S+$/.test(c.value))) { bad(c); c.focus(); return false; }
+      }
+      return true;
+    };
+    const open = pkg => {
+      f.reset(); f.hidden = false; sh.querySelector('.done').hidden = true;
+      f.city_other.hidden = true; f.email.hidden = true; f.instagram.hidden = false;
+      if (pkg) { const r = [...f.querySelectorAll('[name="service"]')].find(r => r.value === pkg || r.value.startsWith(pkg + ' (')); if (r) r.checked = true; }
+      show(pkg && val('service') ? 1 : 0); sh.classList.add('open');
+    };
+    const close = () => sh.classList.remove('open');
+    next.addEventListener('click', () => { if (ok()) show(i + 1); });
+    back.addEventListener('click', () => show(i - 1));
+    f.addEventListener('change', ev => {
+      if (ev.target.name === 'city') { f.city_other.hidden = ev.target.value !== '__other'; if (!f.city_other.hidden) f.city_other.focus(); }
+      if (ev.target.name === 'via') { const em = ev.target.value === 'email'; f.email.hidden = !em; f.instagram.hidden = em; }
+      if (ev.target.name === 'service' || ev.target.name === 'city' && ev.target.value !== '__other') setTimeout(() => { if (ok()) show(i + 1); }, 220);
+    });
+    f.addEventListener('submit', async ev => {
+      ev.preventDefault();
+      if (!ok() || f.botcheck.checked) return;
+      const service = val('service'), city = val('city') === '__other' ? f.city_other.value.trim() : val('city');
+      const via = val('via'), contact = via === 'email' ? f.email.value.trim() : f.instagram.value.trim();
+      const data = {
+        access_key: f.dataset.key, subject: f.dataset.subject + ' ' + service + ' · ' + city, from_name: f.name.value.trim(),
+        Name: f.name.value.trim(), Service: service, 'Add-ons': vals('addons').join(', ') || '-', City: city,
+        'Preferred times': vals('when').join(', ') || '-', Note: f.note.value.trim() || '-',
+        'Reply via': via === 'email' ? 'Email: ' + contact : 'Instagram: ' + contact, Language: document.documentElement.lang
+      };
+      if (via === 'email') data.email = contact;
+      const label = send.innerHTML; send.disabled = true; send.textContent = f.dataset.sending;
+      try {
+        const r = await fetch('https://api.web3forms.com/submit', {method: 'POST', headers: {'Content-Type': 'application/json', Accept: 'application/json'}, body: JSON.stringify(data)});
+        const j = await r.json();
+        if (!j.success) throw 0;
+        f.hidden = true; sh.querySelector('.done').hidden = false;
+      } catch (_) { alert(f.dataset.error); }
+      send.disabled = false; send.innerHTML = label;
+    });
+    document.querySelectorAll('[data-pkg]').forEach(c => {
+      c.addEventListener('click', ev => { ev.preventDefault(); open(c.dataset.pkg); });
+      c.addEventListener('keydown', ev => { if (ev.key === 'Enter') open(c.dataset.pkg); });
+    });
+    document.querySelectorAll('[data-open-form], .about .cta, #fab').forEach(a => a.addEventListener('click', ev => { ev.preventDefault(); open(''); }));
+    sh.addEventListener('click', ev => { if (ev.target === sh || ev.target.closest('.x')) close(); });
+    document.addEventListener('keydown', ev => { if (ev.key === 'Escape') close(); });
+  }
 }
 // cookie notice: informational only (the site sets no tracking cookies); remembers "OK" on this device
 {
