@@ -324,6 +324,8 @@ footer a{text-decoration:none}
 .gr-links a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--H);text-transform:uppercase;font-size:12px;letter-spacing:.02em;padding:13px 20px;border-radius:999px;border:1.5px solid #000;background:#000;color:#fff;transition:transform .25s}.gr-links a+a{background:transparent;color:#000}.gr-links a:hover{transform:translateY(-2px)}
 .cookie{position:fixed;left:20px;bottom:20px;z-index:60;max-width:360px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.08);padding:16px 18px;font-size:13px;line-height:1.5;display:none;gap:14px;align-items:center}
 .cookie.show{display:flex}.cookie a{color:#000;font-weight:600}
+.cookie .ck-b{display:flex;gap:8px;flex:none}.cookie.show{flex-direction:column;align-items:flex-start;gap:12px}.cookie button[data-c="no"]{background:#fff;box-shadow:inset 0 0 0 1.5px #000}
+.ck-link{background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}.ck-link:hover{text-decoration:underline}
 .cookie button{flex:none;border:0;border-radius:999px;background:var(--blue);font-family:var(--H);text-transform:uppercase;font-size:12px;padding:10px 16px;cursor:pointer}
 @media (max-width:900px){.gbadge{margin-left:0;order:3}.cookie{left:12px;right:12px;bottom:12px;max-width:none}}
 @media (max-width:900px){.rv-card{width:82vw;max-width:340px}.gr-row{padding:4px 20px 8px;scroll-padding-left:20px}.gr-head{flex-wrap:wrap}.gr-head .lbl{display:none}}
@@ -522,9 +524,10 @@ footer a{text-decoration:none}
       <li><a href="/es#services">Servicios</a></li><li><a href="/es#gallery">Trabajos</a></li>
       <li><a href="/es-about">Sobre mí</a></li><li><a href="/es#contact">Contacto</a></li></ul></div>
   </div>
-  <div class="ft-bot"><span>© 2026 Colours by Pia Miriam</span><span class="legal"><a href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener">Instagram</a><a href="mailto:piamiriam@gmail.com">Email</a><a href="/privacy">Privacidad y cookies</a><span class="langs"><a href="/" hreflang="en" lang="en">EN</a><a href="/es" hreflang="es" lang="es" class=cur>ES</a><a href="/pt" hreflang="pt" lang="pt">PT</a></span></span></div>
+  <div class="ft-bot"><span>© 2026 Colours by Pia Miriam</span><span class="legal"><a href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener">Instagram</a><a href="mailto:piamiriam@gmail.com">Email</a><a href="/privacy">Privacidad y cookies</a><button type="button" class="ck-link" data-cookie-settings>Configurar cookies</button><span class="langs"><a href="/" hreflang="en" lang="en">EN</a><a href="/es" hreflang="es" lang="es" class=cur>ES</a><a href="/pt" hreflang="pt" lang="pt">PT</a></span></span></div>
 </div></footer>
-<div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><span>Esta web no usa cookies de seguimiento ni de publicidad. <a href="/privacy">Privacidad y cookies</a></span><button type="button" id="cookie-ok">OK</button></div>
+<div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><span>Si aceptas, uso cookies de Google Analytics para saber cómo encuentran y usan la web. <a href="/privacy">Privacidad y cookies</a></span><span class="ck-b"><button type="button" data-c="no">Rechazar</button><button type="button" data-c="yes">Aceptar</button></span></div>
+<script src="/analytics.js"></script>
 <a class="fab" id="fab" href="#contact">Contacto <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
 <script>/* floating Contact pill (mobile): hides while the contact section is on screen, sits above the cookie notice */
 (() => { const f = document.getElementById('fab'), c = document.getElementById('contact'), ck = document.getElementById('cookie');
@@ -706,13 +709,6 @@ lb.addEventListener('touchend', e => { if (tx === null) return; const dx = e.cha
     sh.addEventListener('click', ev => { if (ev.target === sh || ev.target.closest('.x')) close(); });
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape') close(); });
   }
-}
-// cookie notice: informational only (the site sets no tracking cookies); remembers "OK" on this device
-{
-  const ck = document.getElementById('cookie');
-  let seen = false; try { seen = localStorage.getItem('cookie-ok') === '1'; } catch (e) {}
-  if (!seen) setTimeout(() => ck.classList.add('show'), 1800);
-  document.getElementById('cookie-ok').addEventListener('click', () => { ck.classList.remove('show'); try { localStorage.setItem('cookie-ok', '1'); } catch (e) {} });
 }
 document.querySelectorAll('.links a').forEach(a => a.addEventListener('click', () => { document.querySelector('.links').classList.remove('open'); document.querySelector('header').classList.remove('menu-open'); }));
 </script>

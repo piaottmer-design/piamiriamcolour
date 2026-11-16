@@ -22,14 +22,19 @@ p,li{color:#222}p{margin-bottom:14px}ul{margin:0 0 14px 20px}li{margin-bottom:6p
 .box p{margin:0;color:#000}
 footer{border-top:1px solid var(--line);padding:22px 0;font-size:13px;color:#555}
 footer .wrap{max-width:1320px}
-@media (max-width:700px){.wrap{padding:0 20px}main{padding:60px 0 80px}.brand{font-size:13px}.back{font-size:11px}}</style></head>
+.ck-link{background:none;border:0;padding:0;font:inherit;font-weight:600;text-decoration:underline;cursor:pointer;color:inherit}
+.cookie{position:fixed;left:20px;bottom:20px;z-index:60;max-width:380px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.08);padding:16px 18px;font-size:13px;line-height:1.5;display:none;gap:14px;align-items:center}
+.cookie.show{display:flex}.cookie .ck-b{display:flex;gap:8px;flex:none}.cookie.show{flex-direction:column;align-items:flex-start;gap:12px}
+.cookie button{border:0;border-radius:999px;background:var(--blue);font-family:'Archivo Black',Impact,sans-serif;text-transform:uppercase;font-size:12px;padding:10px 16px;cursor:pointer}
+.cookie button[data-c="no"]{background:#fff;box-shadow:inset 0 0 0 1.5px #000}
+@media (max-width:700px){.cookie{left:12px;right:12px;bottom:12px;max-width:none;flex-wrap:wrap}.wrap{padding:0 20px}main{padding:60px 0 80px}.brand{font-size:13px}.back{font-size:11px}}</style></head>
 <body>
 <header><div class="wrap"><a class="brand" href="/">Colours by Pia Miriam</a><a class="back" href="/">← Back to the site</a></div></header>
 <main><div class="wrap">
-  <div class="lbl">Last updated: 16 October 2026</div>
+  <div class="lbl">Last updated: 16 November 2026</div>
   <h1>Privacy &amp; cookies</h1>
 
-  <div class="box"><p><strong>In short:</strong> this website does not use tracking, analytics or advertising cookies. We only receive the details you choose to send us through the booking form, by email or by Instagram message, and we use them only to reply to you and arrange your appointment.</p></div>
+  <div class="box"><p><strong>In short:</strong> this website uses Google Analytics only if you accept it in the cookie notice, to see how visitors find and use the site. It uses no advertising cookies. Otherwise, we only receive the details you choose to send us through the booking form, by email or by Instagram message, and we use them only to reply to you and arrange your appointment.</p></div>
 
   <h2>Who we are</h2>
   <p>This website belongs to Pia Miriam, trading as Colours by Pia Miriam, a mobile hair colourist based in London, United Kingdom. Pia Miriam is the controller of the personal data described here. You can reach us by email at <a href="mailto:piamiriam@gmail.com">piamiriam@gmail.com</a> or by direct message on Instagram (<a href="https://www.instagram.com/coloursbypia_miriam/" target="_blank" rel="noopener">@coloursbypia_miriam</a>).</p>
@@ -38,20 +43,22 @@ footer .wrap{max-width:1320px}
   <ul>
     <li><strong>Booking form:</strong> your name, the service, city and times you choose, any note you add, and the Instagram handle or email address you give us so we can reply.</li>
     <li><strong>Instagram messages and email:</strong> if you message or email us, the details you share in that conversation. Instagram messages are also handled by Meta under its own privacy policy.</li>
+    <li><strong>Analytics (only if you accept):</strong> Google Analytics records how the site is used: pages viewed, how you arrived (for example from Instagram or Google), your approximate location (city level), your device and browser, and actions such as opening the booking form or tapping the Instagram link. When you send the booking form, it records the service, city and contact method you chose, but not your name, email or Instagram handle.</li>
     <li><strong>Technical data:</strong> our hosting provider automatically processes basic technical information (such as your IP address and browser type) to deliver the website securely. We do not use this to identify you.</li>
   </ul>
 
   <h2>Why we use it</h2>
-  <p>We use your details only to answer your enquiry, arrange and manage your appointment, and send you a quote. The legal basis is our legitimate interest in replying to people who contact us and, when you book, taking the steps needed to provide the service you ask for. We never sell your data and we do not send marketing emails.</p>
+  <p>We use your details only to answer your enquiry, arrange and manage your appointment, and send you a quote. The legal basis is our legitimate interest in replying to people who contact us and, when you book, taking the steps needed to provide the service you ask for. For analytics, the legal basis is your consent, which you can withdraw at any time. We never sell your data and we do not send marketing emails.</p>
 
   <h2>Who processes it</h2>
-  <p>The website is hosted by GitHub, Inc. (GitHub Pages), which may process basic technical data outside the UK. Where it does, it relies on recognised safeguards such as the UK International Data Transfer Addendum and Standard Contractual Clauses. Booking form requests are sent to our email through Web3Forms (web3forms.com), which processes them only to deliver them to us and may do so outside the UK. Links to Instagram and Google take you to those services, which have their own privacy policies.</p>
+  <p>The website is hosted by GitHub, Inc. (GitHub Pages), which may process basic technical data outside the UK. Where it does, it relies on recognised safeguards such as the UK International Data Transfer Addendum and Standard Contractual Clauses. Booking form requests are sent to our email through Web3Forms (web3forms.com), which processes them only to deliver them to us and may do so outside the UK. If you accept analytics, Google Analytics is provided by Google Ireland Limited and Google LLC, and the data may be processed in the United States under the EU–US Data Privacy Framework and its UK Extension. We have turned off Google signals, advertising features and data sharing with Google. Links to Instagram and Google take you to those services, which have their own privacy policies.</p>
 
   <h2>How long we keep it</h2>
-  <p>We keep enquiries and booking details only for as long as we need them to deal with your request and look after you as a client, and then delete them.</p>
+  <p>We keep enquiries and booking details only for as long as we need them to deal with your request and look after you as a client, and then delete them. Google Analytics keeps the detailed data linked to its cookies for 2 months and then deletes it. After that, only overall statistics remain (totals such as the number of visits, which do not identify anyone).</p>
 
   <h2>Cookies</h2>
-  <p>This website does not set any tracking, analytics or advertising cookies, and it does not load fonts or scripts from third-party services: everything is served from our own website. When you press “OK” on the cookie notice, your browser stores that choice locally on your device (not a cookie) so the notice doesn’t appear again. You can clear it at any time in your browser settings.</p>
+  <p>If you press <strong>Accept</strong> on the cookie notice, Google Analytics sets cookies (named <code>_ga</code> and <code>_ga_…</code>) that last up to 2 years, to tell visits apart. If you press <strong>Decline</strong>, or make no choice, no analytics cookies are set and nothing is loaded from Google. There are no advertising cookies. Fonts and everything else on the site are served from our own website.</p>
+  <p>Your choice is stored on your device (in local storage, not a cookie). You can change it at any time with “Cookie settings” at the bottom of every page, or here: <button type="button" class="ck-link" data-cookie-settings>Cookie settings</button></p>
 
   <h2>Your rights</h2>
   <p>Under UK data protection law you can ask us for a copy of your data, ask us to correct or delete it, object to or restrict how we use it, and ask for it to be transferred. To make a request, contact us using the details above. If you are unhappy with how we handle your data, you can complain to the Information Commissioner’s Office (ICO) at <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</p>
@@ -60,4 +67,6 @@ footer .wrap{max-width:1320px}
   <p>If we change this policy, we will update it on this page and change the date at the top.</p>
 </div></main>
 <footer><div class="wrap">© Colours by Pia Miriam</div></footer>
+<div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><span>With your OK, I use Google Analytics cookies to see how people find and use this site.</span><span class="ck-b"><button type="button" data-c="no">Decline</button><button type="button" data-c="yes">Accept</button></span></div>
+<script src="/analytics.js"></script>
 </body></html>
