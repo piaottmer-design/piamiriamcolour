@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Blonde &amp; Balayage Specialist in London | Colours by Pia Miriam</title>
 <meta name="description" content="Blonde specialist with over 14 years of experience. Professional-grade hair colouring with exclusive one-on-one experience, and a relaxed vibe in the comfort of your own home.">
 <meta property="og:title" content="Blonde &amp; Balayage Specialist in London | Colours by Pia Miriam">
@@ -21,6 +21,7 @@
 <link rel="alternate" hreflang="x-default" href="https://www.piamiriamcolour.com/">
 <link rel="canonical" href="https://www.piamiriamcolour.com/">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "HairSalon", "@id": "https://www.piamiriamcolour.com/#business", "name": "Colours by Pia Miriam", "url": "https://www.piamiriamcolour.com/", "image": "https://www.piamiriamcolour.com/share.jpg", "description": "Blonde specialist with over 14 years of experience. Professional-grade hair colouring with exclusive one-on-one experience, and a relaxed vibe in the comfort of your own home.", "email": "piamiriam@gmail.com", "areaServed": [{"@type": "City", "name": "London"}, {"@type": "City", "name": "Madrid"}, {"@type": "City", "name": "Lisbon"}], "priceRange": "£40–£240", "founder": {"@type": "Person", "name": "Pia Miriam", "description": "Blonde specialist with over 14 years of experience."}, "sameAs": ["https://www.instagram.com/coloursbypia_miriam/", "https://www.google.com/maps?cid=7808784801875766394"], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Colour consultation"}, "price": 0, "priceCurrency": "GBP"}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Highlights · Half head"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 180, "priceCurrency": "GBP"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Highlights · Full head"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 220, "priceCurrency": "GBP"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Balayage · Half head"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 200, "priceCurrency": "GBP"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Balayage · Full head"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 240, "priceCurrency": "GBP"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Haircut"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 55, "priceCurrency": "GBP"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Professional blow dry"}, "priceSpecification": {"@type": "PriceSpecification", "minPrice": 40, "priceCurrency": "GBP"}}]}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you come to my home?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. I colour hair one-on-one at your home, hotel or private space in London, and I bring everything needed."}}, {"@type": "Question", "name": "Where do you work?", "acceptedAnswer": {"@type": "Answer", "text": "London, and I travel to clients in Madrid and Lisbon throughout the year. Appointments outside London may have location-based pricing."}}, {"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "Highlights: half head from £180, full head from £220. Balayage: half head from £200, full head from £240. Add-ons: haircut +£55, professional blow dry +£40."}}, {"@type": "Question", "name": "Is the consultation free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Not sure which service is right for you? Let’s find your perfect colour together."}}, {"@type": "Question", "name": "What’s included?", "acceptedAnswer": {"@type": "Answer", "text": "Every colour service includes a toner and a simple blow dry to complement the colour."}}, {"@type": "Question", "name": "How do I book?", "acceptedAnswer": {"@type": "Answer", "text": "Use the booking form on this website, message me on Instagram or send me an email."}}]}</script>
 <link href="/fonts.css" rel="stylesheet">
 <style>
 :root{--blue:#BFE1FA;--bg:#F9F9FD;--line:#E1E1E6;--ink:#000;--grey:#808080;--H:'Archivo Black',Impact,sans-serif;--B:'Space Grotesk',system-ui,sans-serif}
@@ -42,7 +43,12 @@ header{position:fixed;top:0;left:0;right:0;z-index:40;color:#000;background:rgba
 @media (prefers-reduced-motion:reduce){.brand span,.ft-brand span{animation:none}}
 .links{display:flex;gap:30px;list-style:none}
 .links a{text-decoration:none;font-weight:600;text-transform:uppercase;font-size:13px}
-.burger{display:none;background:none;border:0;color:#000;font:600 14px var(--B);text-transform:uppercase}
+.burger{display:none;background:none;border:0;width:40px;height:40px;margin-right:-8px;cursor:pointer;position:relative;-webkit-tap-highlight-color:transparent}
+.burger i{position:absolute;left:9px;right:9px;height:2px;border-radius:2px;background:#000;transition:transform .3s,opacity .2s}
+.burger i:nth-child(1){top:13px}.burger i:nth-child(2){top:19px}.burger i:nth-child(3){top:25px}
+header.menu-open .burger i:nth-child(1){transform:translateY(6px) rotate(45deg)}
+header.menu-open .burger i:nth-child(2){opacity:0}
+header.menu-open .burger i:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
 
 /* hero */
 .hero{background:#fff}
@@ -159,7 +165,7 @@ header{position:fixed;top:0;left:0;right:0;z-index:40;color:#000;background:rgba
 .services{padding:110px 0;background:#EAF5FD}
 .services h2{font-size:clamp(28px,3vw,44px);margin-bottom:40px}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px 26px;display:grid;grid-template-rows:auto 1fr auto auto;min-height:220px;transition:transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, background .3s}
+.card{background:#fff;border:1px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.05);border-radius:12px;padding:24px 26px;display:grid;grid-template-rows:auto 1fr auto auto;min-height:220px;transition:transform .3s cubic-bezier(.2,.8,.2,1), border-color .3s, background .3s}
 .card:hover{transform:translateY(-6px);border-color:#000;background:var(--blue)}
 .card .tag{justify-self:start;background:var(--blue);border-radius:999px;padding:5px 12px;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em}
 .card:hover .tag{background:#fff}
@@ -176,7 +182,7 @@ form .picked{grid-column:1/-1;display:none;align-items:center;gap:10px;backgroun
 form .picked.on{display:inline-flex}form .picked button{border:0;background:none;cursor:pointer;font-size:16px;line-height:1;padding:0}
 /* salon menu */
 .menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
-.grp{background:#fff;border:1px solid var(--line);border-radius:12px;padding:26px 28px 8px}
+.grp{background:#fff;border:1px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.05);border-radius:12px;padding:26px 28px 8px}
 .grp h3{font-family:var(--H);text-transform:uppercase;font-weight:400;font-size:clamp(20px,1.9vw,28px);line-height:1;margin-bottom:16px}
 .opt{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:18px;padding:18px 0;border-top:1px solid var(--line);cursor:pointer}
 .opt .nm{font-weight:600;font-size:16px}
@@ -184,15 +190,36 @@ form .picked.on{display:inline-flex}form .picked button{border:0;background:none
 .opt .pr small{font-family:var(--B);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#555;margin-right:6px;vertical-align:middle}
 .opt .bk{display:inline-flex;align-items:center;gap:8px;border:1px solid #000;border-radius:999px;padding:9px 14px;font-family:var(--H);text-transform:uppercase;font-size:11px;text-decoration:none;color:#000;transition:background .3s,border-color .3s}
 .opt:hover .bk,.opt:focus-visible .bk{background:var(--blue);border-color:var(--blue)}
-.addons{margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 28px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 30px}
+.addons{margin-top:16px;background:#fff;border:1px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.05);border-radius:12px;padding:20px 28px;display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 30px}
 .addons .t{font-family:var(--H);text-transform:uppercase;font-size:14px}
 .addons .it{font-size:15px;font-weight:600}.addons .it b{font-family:var(--H);font-weight:400;margin-left:8px}
 .addons small{flex-basis:100%;color:#555;font-size:12.5px}
-.langs{display:flex;gap:8px;font-size:12px;font-weight:600}.langs-m{display:none}.langs a{opacity:.45;text-decoration:none}.langs a.cur{opacity:1;border-bottom:1px solid currentColor}
+.langs{display:flex;gap:8px;font-size:12px;font-weight:600}
+/* single language button */
+.lang-pick{position:relative;display:block}
+.lang-pick summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;border:1.5px solid #000;border-radius:999px;padding:5px 10px;font-weight:600;font-size:12px;line-height:1}
+.lang-pick summary::-webkit-details-marker{display:none}
+.lang-pick summary i{width:6px;height:6px;border-right:1.5px solid #000;border-bottom:1.5px solid #000;transform:translateY(-2px) rotate(45deg);transition:transform .25s}
+.lang-pick[open] summary i{transform:translateY(1px) rotate(-135deg)}
+.lang-pick div{position:absolute;right:0;top:calc(100% + 6px);background:#fff;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.12);padding:6px;display:flex;flex-direction:column;min-width:64px;z-index:50}
+.lang-pick div a{opacity:1;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600;font-size:13px;text-align:center}
+.lang-pick div a:hover{background:var(--blue)}.langs-m{display:none}.langs a{opacity:.45;text-decoration:none}.langs a.cur{opacity:1;border-bottom:1px solid currentColor}
 .notes{margin-top:30px;max-width:820px;font-size:13.5px;color:#333}
 .notes p{margin-bottom:8px}
 
 /* contact */
+/* FAQ: calm list, one answer opens at a time is not forced */
+.faq{background:#fff;padding:100px 0}
+.faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:80px;align-items:start}
+.faq h2{font-size:clamp(28px,3vw,44px)}
+.qas{border-top:1px solid var(--line)}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-family:var(--H);text-transform:uppercase;font-size:clamp(14px,1.2vw,17px);letter-spacing:-.01em}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary span{flex:none;width:32px;height:32px;border-radius:50%;background:var(--blue);display:grid;place-items:center;font-family:var(--B);font-size:18px;transition:transform .3s}
+.qa[open] summary span{transform:rotate(45deg)}
+.qa p{padding:0 52px 24px 0;font-size:15.5px;line-height:1.6;max-width:640px}
+@media (max-width:900px){.faq{padding:64px 0}.faq-grid{grid-template-columns:1fr;gap:20px}.faq h2{font-size:30px}.qa summary{padding:18px 0;font-size:13px}.qa p{padding-right:0;font-size:15px}}
 .contact{background:var(--blue);color:#000;padding:110px 0 100px}
 .contact h2{font-size:clamp(28px,3vw,44px);color:#000}
 .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;margin-top:36px;align-items:center}
@@ -276,9 +303,12 @@ footer a{text-decoration:none}
 
 @media (max-width:900px){
   .wrap{padding:0 20px}
-  .links{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;color:#000;flex-direction:column;gap:0;padding:6px 0;mix-blend-mode:normal}
-  header.menu-open{mix-blend-mode:normal;color:#000;background:#fff}
-  .links.open{display:flex}.links a{display:block;padding:15px 20px}
+  .links{display:none;position:absolute;top:100%;left:0;right:0;height:calc(100vh - 68px);height:calc(100dvh - 68px);overflow:auto;background:var(--blue);color:#000;flex-direction:column;gap:0;padding:8px 20px calc(24px + env(safe-area-inset-bottom));mix-blend-mode:normal}
+  header.menu-open{mix-blend-mode:normal;color:#000;background:var(--blue);backdrop-filter:none}
+  .links.open{display:flex}
+  .links li{border-bottom:1px solid rgba(0,0,0,.14)}
+  .links a{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-family:var(--H);font-weight:400;font-size:28px;line-height:1;letter-spacing:-.01em}
+  .links li.langs{border:0}
   .burger{display:block}
   .hero{padding:140px 0 70px}
   .hero-meta{flex-direction:column;align-items:start}
@@ -289,7 +319,7 @@ footer a{text-decoration:none}
   .grid{grid-template-columns:1fr 1fr;gap:10px}.sc figcaption{left:10px;bottom:10px}
   .cards{grid-template-columns:1fr 1fr;gap:10px}
   .card{min-height:190px;padding:18px}
-  .links .langs{display:none}.langs-m{display:flex;margin-left:auto;margin-right:18px;gap:10px}
+  .links .lang-li{display:none}.langs-m{display:flex;margin-left:auto;margin-right:18px}
   .opt{grid-template-columns:1fr auto;grid-template-areas:"nm bk" "pr bk";row-gap:4px}.opt .nm{grid-area:nm}.opt .pr{grid-area:pr}.opt .bk{grid-area:bk}
   .menu-grid{grid-template-columns:1fr}.grp{padding:22px 20px 6px}.addons{padding:18px 20px}.opt{gap:12px}.opt .bk{padding:8px 11px}
   .card.wide{grid-template-columns:1fr}.card.wide .price,.card.wide .book{grid-column:1;grid-row:auto;justify-self:start}
@@ -306,7 +336,7 @@ footer a{text-decoration:none}
 .gr-head .lbl{margin-right:auto;margin-left:20px;align-self:center}
 .gr-head h2{font-size:clamp(22px,2.2vw,32px)}
 .gr-row{display:flex;gap:16px;align-items:stretch;padding:4px max(40px,calc((100vw - 1320px) / 2 + 40px)) 8px;scroll-padding-left:max(40px,calc((100vw - 1320px) / 2 + 40px))}
-.rv-card{width:340px;flex:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 22px 18px;display:flex;flex-direction:column;transition:transform .3s, border-color .3s}
+.rv-card{width:340px;flex:none;background:#fff;border:1px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.05);border-radius:12px;padding:22px 22px 18px;display:flex;flex-direction:column;transition:transform .3s, border-color .3s}
 .rv-card:hover{transform:translateY(-4px);border-color:#000}
 .rv-card .st{color:#000;letter-spacing:.15em;font-size:13px}
 .rv-card blockquote{font-size:14.5px;line-height:1.5;margin:12px 0 16px;flex:1}
@@ -317,7 +347,7 @@ footer a{text-decoration:none}
 .gbadge b{font-family:var(--H);font-weight:400;font-size:15px}.gbadge .s{letter-spacing:.12em;color:#FBBC04}
 .trust{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px}
 .trust .lbl{color:var(--grey);margin-right:6px}
-.chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 8px 7px 14px;font-size:13px;font-weight:600}
+.chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.05);border-radius:999px;padding:7px 8px 7px 14px;font-size:13px;font-weight:600}
 .chip b{background:var(--blue);border-radius:999px;min-width:24px;height:24px;display:grid;place-items:center;font-size:12px}
 .wo{display:inline-flex;align-items:center;gap:8px;margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px;font-size:13px;font-weight:600;text-decoration:none}
 .wo svg{width:16px;height:16px}.wo:hover{border-color:#000}
@@ -352,6 +382,7 @@ footer a{text-decoration:none}
   .trust{gap:8px}.chip{font-size:12px;padding:6px 7px 6px 12px}
   .gr-links{gap:10px;font-size:13px}.gr-links a{flex:1;justify-content:center;padding:13px 14px;font-size:11px}
   .services,.gallery,.about,.contact{padding:64px 0}
+  .about{padding-bottom:28px}.about + .gallery{padding-top:8px}
   .services h2,.gal-head h2,.contact h2{font-size:30px}
   .services .cards{margin-top:22px}
   .addons{flex-direction:column;align-items:flex-start;gap:6px}
@@ -361,7 +392,7 @@ footer a{text-decoration:none}
   .about-grid{gap:28px}
   .about h2{font-size:30px;margin-bottom:14px}
   .about .big{font-size:14px}
-  .about .cta,.ab .cta{font-size:11.5px;padding:13px 18px;white-space:normal;text-align:left}
+  .about .cta,.ab .cta{font-size:11.5px;padding:14px 18px;white-space:normal;text-align:center;display:flex;justify-content:center}
   .more{display:inline-block;margin:18px 0 0}
   .contact-grid{gap:34px}.ct-photo{display:none}
   .dm{width:100%;justify-content:center;margin-bottom:26px}.ctas{margin-bottom:26px}
@@ -369,9 +400,14 @@ footer a{text-decoration:none}
   .cookie{padding:12px 14px;font-size:12px;gap:10px;border-radius:12px}
   .cookie button{padding:8px 12px;font-size:11px}
   .fab{display:inline-flex;position:fixed;right:16px;bottom:16px;z-index:55;align-items:center;gap:8px;background:#000;color:#fff;text-decoration:none;font-family:var(--H);text-transform:uppercase;font-size:12px;padding:13px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.18);transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .35s,bottom .35s}
-  .fab svg{width:16px;height:16px}.fab svg path{stroke:#fff}
+  .fab{background:var(--blue);color:#000;box-shadow:0 3px 10px rgba(0,0,0,.14);bottom:calc(16px + env(safe-area-inset-bottom));-webkit-tap-highlight-color:transparent}
+  .fab svg{width:16px;height:16px}.fab svg path{stroke:#000}
+  .fab{animation:fabglow 4s ease-in-out infinite}
+  @keyframes fabglow{0%,100%{background-color:var(--blue)}50%{background-color:#fff}}
+  header.menu-open ~ .fab{display:none}
   .fab.away{opacity:0;transform:translateY(20px);pointer-events:none}
-  body.ck .fab{bottom:92px}
+  body.ck .fab{bottom:calc(92px + env(safe-area-inset-bottom))}
+  @media (prefers-reduced-motion:reduce){.fab{animation:none}}
 }
 
 /* mobile hero: tighter gap to Pia's block; moving city pill without layout jumps */
@@ -418,14 +454,15 @@ footer a{text-decoration:none}
     <script>/* logo: letters light up in blue one by one */
     (() => { const b = document.querySelector('.brand'); b.setAttribute('aria-label', b.textContent);
       b.innerHTML = [...b.textContent].map((c, i) => `<span aria-hidden="true" style="--k:${i}">${c === ' ' ? '&nbsp;' : c}</span>`).join(''); })();</script>
-    <div class="langs langs-m"><a href="/" hreflang="en" lang="en" class=cur>EN</a><a href="/es" hreflang="es" lang="es">ES</a><a href="/pt" hreflang="pt" lang="pt">PT</a></div>
-    <button class="burger" onclick="document.querySelector('.links').classList.toggle('open');document.querySelector('header').classList.toggle('menu-open')">Menu</button>
+    <div class="langs-m"><details class="langs lang-pick"><summary aria-label="Language: EN">EN<i aria-hidden="true"></i></summary><div><a href="/es" hreflang="es" lang="es">ES</a><a href="/pt" hreflang="pt" lang="pt">PT</a></div></details></div>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false" onclick="const o=document.querySelector('.links').classList.toggle('open');document.querySelector('header').classList.toggle('menu-open',o);this.setAttribute('aria-expanded',o)"><i></i><i></i><i></i></button>
     <ul class="links">
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Work</a></li>
       <li><a href="/about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li class="langs"><a href="/" hreflang="en" lang="en" class=cur>EN</a><a href="/es" hreflang="es" lang="es">ES</a><a href="/pt" hreflang="pt" lang="pt">PT</a></li>
+      <li class="lang-li"><details class="langs lang-pick"><summary aria-label="Language: EN">EN<i aria-hidden="true"></i></summary><div><a href="/es" hreflang="es" lang="es">ES</a><a href="/pt" hreflang="pt" lang="pt">PT</a></div></details></li>
     </ul>
   </div>
 </header>
@@ -437,7 +474,7 @@ footer a{text-decoration:none}
       <div class="journey"><ol id="journey"><li><small>LDN</small><span>London</span></li><li><small>MAD</small><span>Madrid</span></li><li><small>LIS</small><span>Lisbon</span></li><li><small>NOW</small><span>Your home</span></li></ol></div>
       <div class="hero-meta">
         <p class="fade">Professional-grade hair colouring with exclusive one-on-one experience, and a relaxed vibe in the comfort of your own home.</p>
-        <div class="hero-act fade"><a class="cta" href="#contact" data-pkg="Colour consultation">Book a free colour consultation <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><span class="s">★★★★★</span> <b>5.0</b> · 17 Google reviews</a></div>
+        <div class="hero-act fade"><a class="cta" href="#contact" data-pkg="Colour consultation">Book a free colour consultation</a><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><span class="s">★★★★★</span> <b>5.0</b> · 17 Google reviews</a></div>
       </div>
     </div>
   </section>
@@ -446,7 +483,7 @@ footer a{text-decoration:none}
       <div class="H hname"><span class="ln"><span>Colours by</span></span><span class="ln"><span>Pia Miriam</span></span></div>
       <p class="hero-text">Professional-grade hair colouring with exclusive one-on-one experience, and a relaxed vibe in the comfort of your own home.</p>
       <div class="cities" aria-label="London, Madrid, Lisbon, Your home"><span>London</span><span>Madrid</span><span>Lisbon</span><span class=home>Your home</span></div>
-      <a class="cta" href="#contact" data-pkg="Colour consultation">Book a free colour consultation <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><span class="s">★★★★★</span> <b>5.0</b> · 17 Google reviews</a>
+      <a class="cta" href="#contact" data-pkg="Colour consultation">Book a free colour consultation</a><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><span class="s">★★★★★</span> <b>5.0</b> · 17 Google reviews</a>
     </div>
   </section>
   <section class="about" id="about"><div class="wrap about-grid">
@@ -455,7 +492,7 @@ footer a{text-decoration:none}
       <h2 class="H rv">Pia Miriam</h2>
       <p class="big rv">Blonde specialist with over 14 years of experience.</p>
       <p class="rv">I create a customised look that suits ‘your’ style and enhances your natural beauty; Whether you are looking for a soft sun-kissed,  a just natural looking blonde, trendy ash, or a super-summer blonde. I got you!</p>
-      <p class="rv" style="margin-top:26px"><a class="cta" href="#contact">Get in touch to enquire about availability <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a><a class="more" href="/about">Read my story →</a></p>
+      <p class="rv" style="margin-top:26px"><a class="cta" href="#contact">Get in touch to enquire about availability</a><a class="more" href="/about">Read my story</a></p>
     </div>
   </div></section>
   <section class="gallery" id="gallery"><div class="wrap">
@@ -484,21 +521,25 @@ footer a{text-decoration:none}
   <section class="services" id="services"><div class="wrap">
     <h2 class="H rv">Services</h2>
     <div class="cards">
-      <article class="card wide" data-pkg="Colour consultation" tabindex="0"><span class="tag">Consultation</span><h3>Colour consultation</h3><div class="price">Free</div><p class="note">Not sure which service is right for you? Let’s find your perfect colour together.</p><a class="book" href="#contact">Book <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></article>
+      <article class="card wide" data-pkg="Colour consultation" tabindex="0"><span class="tag">Consultation</span><h3>Colour consultation</h3><div class="price">Free</div><p class="note">Not sure which service is right for you? Let’s find your perfect colour together.</p><a class="book" href="#contact">Book</a></article>
     </div>
     <div class="menu-grid">
-      <div class="grp"><h3>Highlights</h3><div class="opt" data-pkg="Highlights · Half head (from £180)" tabindex="0"><span class="nm">Half head</span><span class="pr"><small>From</small>£180</span><a class="bk" href="#contact">Book <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></div><div class="opt" data-pkg="Highlights · Full head (from £220)" tabindex="0"><span class="nm">Full head</span><span class="pr"><small>From</small>£220</span><a class="bk" href="#contact">Book <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></div></div>
-      <div class="grp"><h3>Balayage</h3><div class="opt" data-pkg="Balayage · Half head (from £200)" tabindex="0"><span class="nm">Half head</span><span class="pr"><small>From</small>£200</span><a class="bk" href="#contact">Book <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></div><div class="opt" data-pkg="Balayage · Full head (from £240)" tabindex="0"><span class="nm">Full head</span><span class="pr"><small>From</small>£240</span><a class="bk" href="#contact">Book <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a></div></div>
+      <div class="grp"><h3>Highlights</h3><div class="opt" data-pkg="Highlights · Half head (from £180)" tabindex="0"><span class="nm">Half head</span><span class="pr"><small>From</small>£180</span><a class="bk" href="#contact">Book</a></div><div class="opt" data-pkg="Highlights · Full head (from £220)" tabindex="0"><span class="nm">Full head</span><span class="pr"><small>From</small>£220</span><a class="bk" href="#contact">Book</a></div></div>
+      <div class="grp"><h3>Balayage</h3><div class="opt" data-pkg="Balayage · Half head (from £200)" tabindex="0"><span class="nm">Half head</span><span class="pr"><small>From</small>£200</span><a class="bk" href="#contact">Book</a></div><div class="opt" data-pkg="Balayage · Full head (from £240)" tabindex="0"><span class="nm">Full head</span><span class="pr"><small>From</small>£240</span><a class="bk" href="#contact">Book</a></div></div>
     </div>
     <div class="addons"><span class="t">Add-ons</span><span class="it">Haircut<b>+£55</b></span><span class="it">Professional blow dry<b>+£40</b></span><small>*Available as an add-on after a colour service</small></div>
     <div class="notes"><p>*All colour services include a toner as well as a simple blow dry to complement the colour.</p><p>**Appointments outside London may have location-based pricing. Please get in touch for a personalised quote.</p></div>
+  </div></section>
+  <section class="faq" id="faq"><div class="wrap faq-grid">
+    <h2 class="H rv">Questions</h2>
+    <div class="qas"><details class="qa"><summary>Do you come to my home?<span aria-hidden="true">+</span></summary><p>Yes. I colour hair one-on-one at your home, hotel or private space in London, and I bring everything needed.</p></details><details class="qa"><summary>Where do you work?<span aria-hidden="true">+</span></summary><p>London, and I travel to clients in Madrid and Lisbon throughout the year. Appointments outside London may have location-based pricing.</p></details><details class="qa"><summary>How much does it cost?<span aria-hidden="true">+</span></summary><p>Highlights: half head from £180, full head from £220. Balayage: half head from £200, full head from £240. Add-ons: haircut +£55, professional blow dry +£40.</p></details><details class="qa"><summary>Is the consultation free?<span aria-hidden="true">+</span></summary><p>Yes. Not sure which service is right for you? Let’s find your perfect colour together.</p></details><details class="qa"><summary>What’s included?<span aria-hidden="true">+</span></summary><p>Every colour service includes a toner and a simple blow dry to complement the colour.</p></details><details class="qa"><summary>How do I book?<span aria-hidden="true">+</span></summary><p>Use the booking form on this website, message me on Instagram or send me an email.</p></details></div>
   </div></section>
   <section class="contact" id="contact"><div class="wrap">
     <h2 class="H">Contact</h2>
     <div class="contact-grid">
       <div>
         <p style="font-size:16px;margin-bottom:30px">Get in touch to enquire about availability.</p>
-        <a class="dm dm-main" href="#book-form" data-open-form>Book now <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
+        <a class="dm dm-main" href="#book-form" data-open-form>Book now</a>
         <div class="alt-ways"><p class="q">Prefer to message directly?</p><div class="alt-links"><a href="mailto:piamiriam@gmail.com" aria-label="Email piamiriam@gmail.com" title="piamiriam@gmail.com"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="1.6"/><path d="M3.5 6.5 12 13l8.5-6.5" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener" aria-label="Message me on Instagram" title="Instagram"><svg class="igi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg></a></div></div>
       </div>
       <figure class="ct-photo"><img src="/foto7.jpg" alt="" loading="lazy"></figure>
@@ -511,7 +552,7 @@ footer a{text-decoration:none}
       <div class="prog"><span class="lbl" id="bf-t">Step <b class="cur">1</b> of 4</span><i><b class="bar"></b></i></div>
       <fieldset class="step" data-step="0"><legend class="H">What would you like?</legend><div class="opts"><label class="opt-r"><input type="radio" name="service" value="Colour consultation (Free)"><span>Colour consultation (Free)</span></label><label class="opt-r"><input type="radio" name="service" value="Highlights · Half head (from £180)"><span>Highlights · Half head (from £180)</span></label><label class="opt-r"><input type="radio" name="service" value="Highlights · Full head (from £220)"><span>Highlights · Full head (from £220)</span></label><label class="opt-r"><input type="radio" name="service" value="Balayage · Half head (from £200)"><span>Balayage · Half head (from £200)</span></label><label class="opt-r"><input type="radio" name="service" value="Balayage · Full head (from £240)"><span>Balayage · Full head (from £240)</span></label></div><div class="sub">Add-ons (optional)</div><div class="chips"><label class="chip-c"><input type="checkbox" name="addons" value="Haircut (+£55)"><span>Haircut (+£55)</span></label><label class="chip-c"><input type="checkbox" name="addons" value="Professional blow dry (+£40)"><span>Professional blow dry (+£40)</span></label></div></fieldset><fieldset class="step" data-step="1" hidden><legend class="H">Where are you based?</legend><div class="opts"><label class="opt-r"><input type="radio" name="city" value="London"><span>London</span></label><label class="opt-r"><input type="radio" name="city" value="Madrid"><span>Madrid</span></label><label class="opt-r"><input type="radio" name="city" value="Lisbon"><span>Lisbon</span></label><label class="opt-r"><input type="radio" name="city" value="__other"><span>Somewhere else</span></label></div><input class="fi other" type="text" name="city_other" placeholder="Which city?" hidden></fieldset><fieldset class="step" data-step="2" hidden><legend class="H">When suits you best?</legend><div class="sub">Choose all that apply</div><div class="chips"><label class="chip-c"><input type="checkbox" name="when" value="Weekdays"><span>Weekdays</span></label><label class="chip-c"><input type="checkbox" name="when" value="Weekends"><span>Weekends</span></label><label class="chip-c"><input type="checkbox" name="when" value="Mornings"><span>Mornings</span></label><label class="chip-c"><input type="checkbox" name="when" value="Afternoons"><span>Afternoons</span></label></div><textarea class="fi" name="note" rows="3" placeholder="Anything Pia should know? (optional)"></textarea></fieldset><fieldset class="step" data-step="3" hidden><legend class="H">Your details</legend><input class="fi" type="text" name="name" placeholder="Your name" autocomplete="name" required><div class="sub">How should Pia reply?</div><div class="seg"><label><input type="radio" name="via" value="instagram" checked><span>Instagram</span></label><label><input type="radio" name="via" value="email"><span>Email</span></label></div><input class="fi" type="text" name="instagram" placeholder="Your Instagram @" autocomplete="off"><input class="fi" type="email" name="email" placeholder="Your email" autocomplete="email" hidden><p class="consent">Your details are only used to reply to you. <a href="/privacy" target="_blank">Privacy &amp; cookies</a></p></fieldset>
       <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
-      <div class="nav"><button type="button" class="back" hidden>← Back</button><button type="button" class="next dm">Next <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></button><button type="submit" class="send dm" hidden>Send <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></button></div>
+      <div class="nav"><button type="button" class="back" hidden>← Back</button><button type="button" class="next dm">Next</button><button type="submit" class="send dm" hidden>Send</button></div>
     </form>
     <div class="done" hidden><div class="H">Thank you</div><p>Your message has been sent. Pia will be in touch soon.</p></div>
     <p class="alt">Prefer to message directly? <a href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener">Message me on Instagram</a></p>
@@ -526,13 +567,14 @@ footer a{text-decoration:none}
         n.replaceWith(f); }); })();</script>
     <div class="ft-col"><div class="lbl">Menu</div><ul>
       <li><a href="/#services">Services</a></li><li><a href="/#gallery">Work</a></li>
-      <li><a href="/about">About</a></li><li><a href="/#contact">Contact</a></li></ul></div>
+      <li><a href="/about">About</a></li><li><a href="/#faq">FAQ</a></li><li><a href="/#contact">Contact</a></li></ul></div>
   </div>
   <div class="ft-bot"><span>© 2026 Colours by Pia Miriam</span><span class="legal"><a href="https://ig.me/m/coloursbypia_miriam" target="_blank" rel="noopener">Instagram</a><a href="mailto:piamiriam@gmail.com">Email</a><a href="/privacy">Privacy &amp; cookies</a><button type="button" class="ck-link" data-cookie-settings>Cookie settings</button><span class="langs"><a href="/" hreflang="en" lang="en" class=cur>EN</a><a href="/es" hreflang="es" lang="es">ES</a><a href="/pt" hreflang="pt" lang="pt">PT</a></span></span></div>
 </div></footer>
 <div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><span>With your OK, I use Google Analytics cookies to see how people find and use this site. <a href="/privacy">Privacy &amp; cookies</a></span><span class="ck-b"><button type="button" data-c="no">Decline</button><button type="button" data-c="yes">Accept</button></span></div>
 <script src="/analytics.js"></script>
-<a class="fab" id="fab" href="#contact">Contact <svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></a>
+<a class="fab" id="fab" href="#contact"><span class="fab-t">Contact</span></a>
+
 <script>/* floating Contact pill (mobile): hides while the contact section is on screen, sits above the cookie notice */
 (() => { const f = document.getElementById('fab'), c = document.getElementById('contact'), ck = document.getElementById('cookie');
   if (c && 'IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(x => f.classList.toggle('away', x.isIntersecting)), {threshold: .15}).observe(c);
@@ -595,7 +637,14 @@ gsap.utils.toArray('.rv').forEach(el => gsap.from(el, {y: 70, opacity: 0, durati
 gsap.to('.par', {yPercent: -12, ease: 'none', scrollTrigger: {trigger: '.about', start: 'top bottom', end: 'bottom top', scrub: true}});
 
 // GALLERY: calm grid, photos settle in once
-gsap.from('.sc', {y: 50, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: .08, scrollTrigger: {trigger: '.grid', start: 'top 85%'}});
+if (!reduce) mm.add('(min-width: 901px)', () => {
+  gsap.from('.sc', {y: 50, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: .08, scrollTrigger: {trigger: '.grid', start: 'top 85%'}});
+});
+// phones: each photo rises and sharpens as it comes into view (plays once, never holds the scroll)
+if (!reduce) mm.add('(max-width: 900px)', () => {
+  gsap.utils.toArray('.sc').forEach((el, k) => gsap.from(el, {y: 40, opacity: 0, scale: .94, duration: .9, ease: 'expo.out', delay: (k % 2) * .08,
+    scrollTrigger: {trigger: el, start: 'top 92%', once: true}}));
+});
 // SERVICES cards: deal in like cards
 gsap.fromTo('.services .card, .grp, .addons', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: .8, ease: 'expo.out', stagger: .08, scrollTrigger: {trigger: '.services', start: 'top 80%'}});
 // CONTACT title slams in
