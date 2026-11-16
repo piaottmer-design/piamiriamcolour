@@ -481,10 +481,11 @@ footer a{text-decoration:none}
 .mbar{display:none}
 @media (max-width:900px){
   .fab{display:none!important}
-  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 -1px 0 var(--line)}
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:0 12px calc(12px + env(safe-area-inset-bottom));background:none;pointer-events:none}
+  .mbar a{pointer-events:auto;box-shadow:0 4px 14px rgba(0,0,0,.16)}
   .mbar a{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;height:50px;border-radius:999px;font-family:var(--H);text-transform:uppercase;font-size:12px;text-decoration:none;color:#000;-webkit-tap-highlight-color:transparent}
   .mbar .mb-book{background:var(--blue)}
-  .mbar .mb-contact{box-shadow:inset 0 0 0 1.5px #000}
+  .mbar .mb-contact{background:#fff;box-shadow:inset 0 0 0 1.5px #000,0 4px 14px rgba(0,0,0,.16)}
   header.menu-open ~ .mbar{display:none}
   body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
   .cookie{bottom:calc(84px + env(safe-area-inset-bottom))!important}
