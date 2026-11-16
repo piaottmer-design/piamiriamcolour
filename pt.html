@@ -344,12 +344,12 @@ footer a{text-decoration:none}
 .rv-card figcaption span{font-family:var(--B);font-weight:600;font-size:11px;color:#555;text-transform:none;background:var(--blue);border-radius:999px;padding:3px 9px}
 .gbadge{display:inline-flex;align-items:center;gap:10px;margin-right:auto;margin-left:22px;padding:8px 16px 8px 10px;background:#fff;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:13px;font-weight:500;transition:border-color .3s}
 .gbadge:hover{border-color:#000}.gbadge svg{width:20px;height:20px;flex:none}
-.gbadge b{font-family:var(--H);font-weight:400;font-size:15px}.gbadge .s{letter-spacing:.12em;color:#FBBC04}
+.gbadge b{font-family:var(--H);font-weight:400;font-size:15px}.gbadge .s{color:#000;font-size:12px;margin-left:-4px}
 .trust{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px}
 .trust .lbl{color:var(--grey);margin-right:6px}
 .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.05);border-radius:999px;padding:7px 8px 7px 14px;font-size:13px;font-weight:600}
 .chip b{background:var(--blue);border-radius:999px;min-width:24px;height:24px;display:grid;place-items:center;font-size:12px}
-.wo{display:inline-flex;align-items:center;gap:8px;margin-left:auto;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 10px;font-size:13px;font-weight:600;text-decoration:none}
+.wo{display:inline-flex;align-items:center;gap:8px;margin-left:auto;background:#fff;border:1px solid transparent;box-shadow:0 1px 3px rgba(0,0,0,.05);border-radius:999px;padding:7px 14px 7px 10px;font-size:13px;font-weight:600;text-decoration:none}
 .wo svg{width:16px;height:16px}.wo:hover{border-color:#000}
 @media (max-width:900px){.wo{margin-left:0}.trust .lbl{flex-basis:100%}}
 .gr-links{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px;font-size:14px;font-weight:600}
@@ -380,7 +380,8 @@ footer a{text-decoration:none}
   .gr-head .arrows{display:none}
   .gbadge{order:0}
   .trust{gap:8px}.chip{font-size:12px;padding:6px 7px 6px 12px}
-  .gr-links{gap:10px;font-size:13px}.gr-links a{flex:1;justify-content:center;padding:13px 14px;font-size:11px}
+  .gr-links{flex-direction:column;gap:10px;font-size:13px}.gr-links a{width:100%;justify-content:center;text-align:center;padding:15px 16px;font-size:12px}
+  .gr-links a:first-child{background:var(--blue);border-color:var(--blue);color:#000}
   .services,.gallery,.about,.contact{padding:64px 0}
   .about{padding-bottom:28px}.about + .gallery{padding-top:8px}
   .services h2,.gal-head h2,.contact h2{font-size:30px}
@@ -400,14 +401,13 @@ footer a{text-decoration:none}
   .cookie{padding:12px 14px;font-size:12px;gap:10px;border-radius:12px}
   .cookie button{padding:8px 12px;font-size:11px}
   .fab{display:inline-flex;position:fixed;right:16px;bottom:16px;z-index:55;align-items:center;gap:8px;background:#000;color:#fff;text-decoration:none;font-family:var(--H);text-transform:uppercase;font-size:12px;padding:13px 18px;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.18);transition:transform .35s cubic-bezier(.16,1,.3,1),opacity .35s,bottom .35s}
-  .fab{background:var(--blue);color:#000;box-shadow:0 3px 10px rgba(0,0,0,.14);bottom:calc(16px + env(safe-area-inset-bottom));-webkit-tap-highlight-color:transparent}
+  .fab{background:var(--blue);color:#000;font-size:15px;padding:18px 30px;box-shadow:0 6px 18px rgba(0,0,0,.18);bottom:calc(18px + env(safe-area-inset-bottom));right:auto;left:50%;transform:translateX(-50%);-webkit-tap-highlight-color:transparent}
   .fab svg{width:16px;height:16px}.fab svg path{stroke:#000}
-  .fab{animation:fabglow 4s ease-in-out infinite}
-  @keyframes fabglow{0%,100%{background-color:var(--blue)}50%{background-color:#fff}}
   header.menu-open ~ .fab{display:none}
-  .fab.away{opacity:0;transform:translateY(20px);pointer-events:none}
+  .fab.away{opacity:0;transform:translate(-50%,20px);pointer-events:none}
+  .sc.pop{opacity:0;transform:translateY(36px) scale(.95);transition:opacity .8s ease,transform .9s cubic-bezier(.16,1,.3,1)}
+  .sc.pop.in{opacity:1;transform:none}
   body.ck .fab{bottom:calc(92px + env(safe-area-inset-bottom))}
-  @media (prefers-reduced-motion:reduce){.fab{animation:none}}
 }
 
 /* mobile hero: tighter gap to Pia's block; moving city pill without layout jumps */
@@ -432,10 +432,11 @@ footer a{text-decoration:none}
 /* hero: Google rating right under the main button */
 .hero-act{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
 .hero-rate{display:inline-flex;align-items:center;gap:6px;font-size:13px;text-decoration:none;color:#000}
-.hero-rate .s{color:#F5B301;letter-spacing:1px}.hero-rate:hover{opacity:.65}
+.hero-rate svg{width:16px;height:16px;flex:none}.hero-rate b{font-family:var(--H);font-weight:400}.hero-rate .s{color:#000;font-size:12px}.hero-rate .n{opacity:.8}.hero-rate:hover{opacity:.65}
 .hero-m .hero-rate{display:flex;margin-top:14px}
 /* mobile hero button: text centred next to the arrow, one line when it fits */
-.hero-m .cta{display:flex;justify-content:center;gap:8px;text-align:center;white-space:normal;font-size:11px;letter-spacing:0;line-height:1.25;padding:16px 14px}
+.hero-m .cta{display:flex;width:fit-content;margin:0 auto;justify-content:center;text-align:center;white-space:nowrap;font-size:13px;padding:16px 30px}
+.hero-m .hero-rate{justify-content:center}
 @media (max-width:900px){.hero-act{align-items:flex-start}}
 @media (max-width:900px){
   .contact{padding:72px 0 64px}
@@ -444,6 +445,53 @@ footer a{text-decoration:none}
   .alt-ways{margin-top:30px;padding-top:24px}
   .ft-bot{flex-direction:column;align-items:flex-start;gap:16px}
   .ft-bot .legal{flex-wrap:wrap;gap:14px 22px}
+}
+
+/* ---- one spacing rhythm: sections 100px (desktop) / 64px (phones); title to content 36px / 24px ---- */
+.quote,.gallery,.services,.faq,.contact{padding-top:100px;padding-bottom:100px}
+.greviews{padding-bottom:100px}
+.gal-head{margin-bottom:36px}.services h2{margin-bottom:36px}.contact h2{margin-bottom:36px}.faq-grid{gap:60px}
+@media (max-width:900px){
+  .quote{padding-top:64px;padding-bottom:40px}
+  .greviews{padding-bottom:64px}
+  .gallery,.services,.faq,.contact{padding-top:64px;padding-bottom:64px}
+  .about + .gallery{padding-top:8px}
+  .gal-head{margin-bottom:24px}.services h2,.contact h2{margin-bottom:24px}.services .cards{margin-top:0}.contact h2{margin-bottom:0}.contact .contact-grid{margin-top:24px}
+  .faq-grid{gap:24px}
+}
+
+/* hero: less space above the name; rating on the left, level with the button (desktop) */
+.hero-d{padding-top:130px;padding-bottom:36px}
+.hero-d .hero-meta{display:flex;justify-content:space-between;align-items:center;margin-top:30px}
+@media (max-width:900px){.hero-m{padding-top:100px}.hero.hero-m{padding-bottom:20px}}
+
+/* desktop: the same two buttons always in the top bar; no Google line in the hero; Pia's photo right under the journey */
+.hbtns{display:none}
+@media (min-width:901px){
+  .hbtns{display:flex;gap:10px;margin-left:24px}
+  .hbtns a{display:inline-flex;align-items:center;height:40px;padding:0 18px;border-radius:999px;font-family:var(--H);text-transform:uppercase;font-size:11.5px;text-decoration:none;color:#000;white-space:nowrap}
+  .hbtns .hb-book{background:var(--blue)}.hbtns .hb-contact{box-shadow:inset 0 0 0 1.5px #000}
+  .links .nav-contact{display:none}
+  .links{align-items:center}
+  .hero-d .hero-meta{display:none}
+  .hero-d{padding-bottom:28px}
+  .hero-m + .about{padding-top:0}
+}
+/* phones: two buttons always at the bottom (Free consultation + Contact); Pia's photo right under the cities */
+.mbar{display:none}
+@media (max-width:900px){
+  .fab{display:none!important}
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 -1px 0 var(--line)}
+  .mbar a{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;height:50px;border-radius:999px;font-family:var(--H);text-transform:uppercase;font-size:12px;text-decoration:none;color:#000;-webkit-tap-highlight-color:transparent}
+  .mbar .mb-book{background:var(--blue)}
+  .mbar .mb-contact{box-shadow:inset 0 0 0 1.5px #000}
+  header.menu-open ~ .mbar{display:none}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .cookie{bottom:calc(84px + env(safe-area-inset-bottom))!important}
+  .hero-m .cta,.hero-m .hero-rate{display:none!important}
+  .hero-m .cities{margin-bottom:0}
+  .hero.hero-m{padding-bottom:18px}
+  .hero-m + .about{padding-top:0}
 }
 </style>
 </head>
@@ -461,9 +509,10 @@ footer a{text-decoration:none}
       <li><a href="#gallery">Trabalhos</a></li>
       <li><a href="/pt-about">Sobre mim</a></li>
       <li><a href="#faq">Perguntas</a></li>
-      <li><a href="#contact">Contacto</a></li>
+      <li class="nav-contact"><a href="#contact">Contacto</a></li>
       <li class="lang-li"><details class="langs lang-pick"><summary aria-label="Language: PT">PT<i aria-hidden="true"></i></summary><div><a href="/" hreflang="en" lang="en">EN</a><a href="/es" hreflang="es" lang="es">ES</a></div></details></li>
     </ul>
+    <div class="hbtns"><a class="hb-book" href="#contact" data-pkg="Consulta de cor">Consulta grátis</a><a class="hb-contact" href="#contact">Contacto</a></div>
   </div>
 </header>
 
@@ -472,18 +521,14 @@ footer a{text-decoration:none}
     <div class="wrap hero-in">
       <h1 class="H"><span class="ln"><span>Colours by</span></span><span class="ln"><span>Pia Miriam</span></span></h1>
       <div class="journey"><ol id="journey"><li><small>LDN</small><span>Londres</span></li><li><small>MAD</small><span>Madrid</span></li><li><small>LIS</small><span>Lisboa</span></li><li><small>HOJE</small><span>A sua casa</span></li></ol></div>
-      <div class="hero-meta">
-        <p class="fade">Coloração profissional com uma experiência exclusiva e personalizada, num ambiente descontraído, no conforto da sua casa.</p>
-        <div class="hero-act fade"><a class="cta" href="#contact" data-pkg="Consulta de cor">Marque uma consulta de cor gratuita</a><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><span class="s">★★★★★</span> <b>5.0</b> · 17 avaliações no Google</a></div>
-      </div>
+      <div class="hero-meta fade"><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><b>5.0</b><span class="s">★</span><span class="n">· 17 avaliações no Google</span></a><a class="cta" href="#contact" data-pkg="Consulta de cor">Consulta grátis</a></div>
     </div>
   </section>
   <section class="hero hero-m">
     <div class="wrap hero-in">
       <div class="H hname"><span class="ln"><span>Colours by</span></span><span class="ln"><span>Pia Miriam</span></span></div>
-      <p class="hero-text">Coloração profissional com uma experiência exclusiva e personalizada, num ambiente descontraído, no conforto da sua casa.</p>
       <div class="cities" aria-label="Londres, Madrid, Lisboa, A sua casa"><span>Londres</span><span>Madrid</span><span>Lisboa</span><span class=home>A sua casa</span></div>
-      <a class="cta" href="#contact" data-pkg="Consulta de cor">Marque uma consulta de cor gratuita</a><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><span class="s">★★★★★</span> <b>5.0</b> · 17 avaliações no Google</a>
+      <a class="cta" href="#contact" data-pkg="Consulta de cor">Consulta grátis</a><a class="hero-rate" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><b>5.0</b><span class="s">★</span><span class="n">· 17 avaliações no Google</span></a>
     </div>
   </section>
   <section class="about" id="about"><div class="wrap about-grid">
@@ -511,9 +556,9 @@ footer a{text-decoration:none}
     <cite>— Marian · Google review</cite>
   </div></section>
   <section class="greviews">
-    <div class="wrap gr-head"><h2 class="H rv">Opiniões de clientes</h2><a class="gbadge" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><b>5.0</b><span class="s">★★★★★</span><span>17 avaliações no Google</span></a>
+    <div class="wrap gr-head"><h2 class="H rv">Opiniões de clientes</h2><a class="gbadge" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><b>5.0</b><span class="s">★</span><span>17 avaliações no Google</span></a>
       <div class="arrows"><button class="prev" aria-label="Anterior"><svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></button><button class="next" aria-label="Seguinte"><svg width="16" height="11" viewBox="0 0 18 12"><path d="M0 6h16M11 1l5 5-5 5" stroke="#000" stroke-width="2" fill="none"/></svg></button></div></div>
-    <div class="gr-row rail" id="grrow"><figure class="rv-card"><div class="st">★★★★★</div><blockquote>Pia has been colouring my hair for 4 years and i am always happy with the result. Pia is highly skilled, professional and actively listens to my requests. She is kind and easy to talk to. The colours she does are expertly blended - never having an obvious line as my hair grows.</blockquote><figcaption>Jessica<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><div class="st">★★★★★</div><blockquote>Pia has been colouring my hair for the past couple of years and always does an amazing job- I like a natural balayage so it’s easy to maintain and she always nails it!</blockquote><figcaption>Vanita<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><div class="st">★★★★★</div><blockquote>Pia is a wonderful colourist; I wouldn&#x27;t trust anyone else. I&#x27;m in my mid fifties and I&#x27;m always after colour that looks natural. As I age (and fade a little) that can be harder to achieve. Pia listens to and senses my hopes and fears, and is adjusting my colour to respond to me as I change. My hair is brighter, and I&#x27;m left feeling my power more. I love her and my colour. Pia is instinctive, responsive and professional. I highly recommend her.</blockquote><figcaption>Gemma<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><div class="st">★★★★★</div><blockquote>I’ve been having blonde highlights for many years, I recently used Pia for the first time, and It’s the best colour I’ve ever had. Not only is she an incredible colourist and magically created a natural, bright and luminous blonde. She is also wonderful company. A real gem of a find.</blockquote><figcaption>Nikki<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><div class="st">★★★★★</div><blockquote>For years I was fighting with my hair colour. My hair is dark, and after years of colour damage and inconsistent results I honestly didn&#x27;t feel comfortable with it anymore. Pia is known as a blonde specialist, but she completely turned things around for me: in just a couple of appointments she fixed years of damage and uneven colour. My hair now behaves completely differently. It has a lovely weight and movement, and she also gives me a beautiful cut. I&#x27;m endlessly grateful. After years of not feeling good about my hair, I finally love it again. Thank you, Pia!</blockquote><figcaption>Mariana<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><div class="st">★★★★★</div><blockquote>Pia has been colouring my hair for over a year now. It’s the best it’s ever been! Pia looks at your skin tone, takes into account your age (I’m in my 60s) and advises accordingly. She has expertly coloured my hair that suits my age and discreetly hides my grey and makes me look younger! Always a pleasure to have her round my house. Highly recommend.</blockquote><figcaption>Catherine<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><div class="st">★★★★★</div><blockquote>I’ve been a loyal client of Pia’s for over ten years, and she is truly exceptional at what she does. She is an incredibly skilled colorist with a great eye for detail and also takes the time to listen and create exactly the look I’m going for. I love the fact that she comes to do my hair in the privacy of my own home, it’s super convenient and Pia is very accommodating. I highly recommend Pia, and I promise you will never look back!</blockquote><figcaption>Sarah<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><div class="st">★★★★★</div><blockquote>Pia is the best hair colourist I’ve EVER had! She always colours my blonde hair to the exact shade I describe to her. She’s also wonderful at giving hints and tips to make the colour right for me. All of this skill on top of being a thoroughly lovely person, would highly recommend without hesitation!</blockquote><figcaption>Louise<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><div class="st">★★★★★</div><blockquote>Pia has been colouring my hair for at least 5 years and is a brilliant colourist I completely trust. I have brunette hair, going grey and Pia does my highlights to help reduce contrast. She takes a lot of care to look after my hair and does fine highlights that blend in. She always listens and is very kind and patient. Highly recommend.</blockquote><figcaption>Katharine<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><div class="st">★★★★★</div><blockquote>Pia always matches my natural brunette colour, which is exactly what I want! I love that she gives suggestions but listens at the same time. I can fully trust her with my thick hair. She&#x27;s very professional, clean, and flexible with schedules. Totally recommend her!</blockquote><figcaption>María<span>Avaliação Google</span></figcaption></figure></div>
+    <div class="gr-row rail" id="grrow"><figure class="rv-card"><blockquote>Pia has been colouring my hair for 4 years and i am always happy with the result. Pia is highly skilled, professional and actively listens to my requests. She is kind and easy to talk to. The colours she does are expertly blended - never having an obvious line as my hair grows.</blockquote><figcaption>Jessica<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><blockquote>Pia has been colouring my hair for the past couple of years and always does an amazing job- I like a natural balayage so it’s easy to maintain and she always nails it!</blockquote><figcaption>Vanita<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><blockquote>Pia is a wonderful colourist; I wouldn&#x27;t trust anyone else. I&#x27;m in my mid fifties and I&#x27;m always after colour that looks natural. As I age (and fade a little) that can be harder to achieve. Pia listens to and senses my hopes and fears, and is adjusting my colour to respond to me as I change. My hair is brighter, and I&#x27;m left feeling my power more. I love her and my colour. Pia is instinctive, responsive and professional. I highly recommend her.</blockquote><figcaption>Gemma<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><blockquote>I’ve been having blonde highlights for many years, I recently used Pia for the first time, and It’s the best colour I’ve ever had. Not only is she an incredible colourist and magically created a natural, bright and luminous blonde. She is also wonderful company. A real gem of a find.</blockquote><figcaption>Nikki<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><blockquote>For years I was fighting with my hair colour. My hair is dark, and after years of colour damage and inconsistent results I honestly didn&#x27;t feel comfortable with it anymore. Pia is known as a blonde specialist, but she completely turned things around for me: in just a couple of appointments she fixed years of damage and uneven colour. My hair now behaves completely differently. It has a lovely weight and movement, and she also gives me a beautiful cut. I&#x27;m endlessly grateful. After years of not feeling good about my hair, I finally love it again. Thank you, Pia!</blockquote><figcaption>Mariana<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><blockquote>Pia has been colouring my hair for over a year now. It’s the best it’s ever been! Pia looks at your skin tone, takes into account your age (I’m in my 60s) and advises accordingly. She has expertly coloured my hair that suits my age and discreetly hides my grey and makes me look younger! Always a pleasure to have her round my house. Highly recommend.</blockquote><figcaption>Catherine<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><blockquote>I’ve been a loyal client of Pia’s for over ten years, and she is truly exceptional at what she does. She is an incredibly skilled colorist with a great eye for detail and also takes the time to listen and create exactly the look I’m going for. I love the fact that she comes to do my hair in the privacy of my own home, it’s super convenient and Pia is very accommodating. I highly recommend Pia, and I promise you will never look back!</blockquote><figcaption>Sarah<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><blockquote>Pia is the best hair colourist I’ve EVER had! She always colours my blonde hair to the exact shade I describe to her. She’s also wonderful at giving hints and tips to make the colour right for me. All of this skill on top of being a thoroughly lovely person, would highly recommend without hesitation!</blockquote><figcaption>Louise<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><blockquote>Pia has been colouring my hair for at least 5 years and is a brilliant colourist I completely trust. I have brunette hair, going grey and Pia does my highlights to help reduce contrast. She takes a lot of care to look after my hair and does fine highlights that blend in. She always listens and is very kind and patient. Highly recommend.</blockquote><figcaption>Katharine<span>Avaliação Google</span></figcaption></figure><figure class="rv-card"><blockquote>Pia always matches my natural brunette colour, which is exactly what I want! I love that she gives suggestions but listens at the same time. I can fully trust her with my thick hair. She&#x27;s very professional, clean, and flexible with schedules. Totally recommend her!</blockquote><figcaption>María<span>Avaliação Google</span></figcaption></figure></div>
     <div class="wrap"><div class="progress"><i id="grprog"></i></div>
       <div class="trust"><span class="lbl">As clientes mencionam</span><span class="chip">Coloração<b>8</b></span><span class="chip">Colorista<b>7</b></span><span class="chip">Madeixas louras<b>5</b></span><a class="wo" href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Empresa detida por uma mulher</a></div>
       <div class="gr-links"><a href="https://www.google.com/maps?cid=7808784801875766394" target="_blank" rel="noopener">Ver todas as avaliações no Google</a><a href="https://g.page/r/CXosRpNnYF5sEBM/review" target="_blank" rel="noopener">Deixar uma avaliação</a></div></div>
@@ -573,11 +618,10 @@ footer a{text-decoration:none}
 </div></footer>
 <div class="cookie" id="cookie" role="region" aria-label="Cookie notice"><span>Se aceitar, uso cookies do Google Analytics para saber como encontram e usam o site. <a href="/privacy">Privacidade e cookies</a></span><span class="ck-b"><button type="button" data-c="no">Recusar</button><button type="button" data-c="yes">Aceitar</button></span></div>
 <script src="/analytics.js"></script>
-<a class="fab" id="fab" href="#contact"><span class="fab-t">Contacto</span></a>
+<nav class="mbar" id="mbar" aria-label="Contacto"><a class="mb-book" href="#contact" data-pkg="Consulta de cor">Consulta grátis</a><a class="mb-contact" href="#contact">Contacto</a></nav>
 
-<script>/* floating Contact pill (mobile): hides while the contact section is on screen, sits above the cookie notice */
-(() => { const f = document.getElementById('fab'), c = document.getElementById('contact'), ck = document.getElementById('cookie');
-  if (c && 'IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(x => f.classList.toggle('away', x.isIntersecting)), {threshold: .15}).observe(c);
+<script>/* phones: the cookie notice sits above the bottom bar */
+(() => { const ck = document.getElementById('cookie');
   const sync = () => document.body.classList.toggle('ck', ck.classList.contains('show'));
   new MutationObserver(sync).observe(ck, {attributes: true, attributeFilter: ['class']}); sync(); })();</script>
 
@@ -640,11 +684,12 @@ gsap.to('.par', {yPercent: -12, ease: 'none', scrollTrigger: {trigger: '.about',
 if (!reduce) mm.add('(min-width: 901px)', () => {
   gsap.from('.sc', {y: 50, opacity: 0, duration: 1.1, ease: 'expo.out', stagger: .08, scrollTrigger: {trigger: '.grid', start: 'top 85%'}});
 });
-// phones: each photo rises and sharpens as it comes into view (plays once, never holds the scroll)
-if (!reduce) mm.add('(max-width: 900px)', () => {
-  gsap.utils.toArray('.sc').forEach((el, k) => gsap.from(el, {y: 40, opacity: 0, scale: .94, duration: .9, ease: 'expo.out', delay: (k % 2) * .08,
-    scrollTrigger: {trigger: el, start: 'top 92%', once: true}}));
-});
+// phones: each photo rises in as it comes into view (plays once, never holds the scroll).
+// Photos are only hidden once this script runs, so they always show if anything fails.
+if (!reduce && matchMedia('(max-width: 900px)').matches && 'IntersectionObserver' in window) {
+  const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } }), {rootMargin: '0px 0px -8% 0px'});
+  document.querySelectorAll('.sc').forEach((el, k) => { el.style.transitionDelay = (k % 2) * 90 + 'ms'; el.classList.add('pop'); io.observe(el); });
+}
 // SERVICES cards: deal in like cards
 gsap.fromTo('.services .card, .grp, .addons', {y: 40, opacity: 0}, {y: 0, opacity: 1, duration: .8, ease: 'expo.out', stagger: .08, scrollTrigger: {trigger: '.services', start: 'top 80%'}});
 // CONTACT title slams in
@@ -758,7 +803,7 @@ lb.addEventListener('touchend', e => { if (tx === null) return; const dx = e.cha
       c.addEventListener('click', ev => { ev.preventDefault(); open(c.dataset.pkg); });
       c.addEventListener('keydown', ev => { if (ev.key === 'Enter') open(c.dataset.pkg); });
     });
-    document.querySelectorAll('[data-open-form], .about .cta, #fab').forEach(a => a.addEventListener('click', ev => { ev.preventDefault(); open(''); }));
+    document.querySelectorAll('[data-open-form], .about .cta').forEach(a => a.addEventListener('click', ev => { ev.preventDefault(); open(''); }));
     sh.addEventListener('click', ev => { if (ev.target === sh || ev.target.closest('.x')) close(); });
     document.addEventListener('keydown', ev => { if (ev.key === 'Escape') close(); });
   }
